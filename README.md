@@ -1,68 +1,32 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Swizzle & Salud: Your Mocktail Mixology Mainstay
 
-## Available Scripts
+*The recipe hub for the social enthusiast who loves their tonic... hold the gin.*
 
-In the project directory, you can run:
+### Application Overview
 
-### `npm start`
+Welcome to Swizzle and Salud, a social recipe application for discerning palates who want all spirit, no spirits.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The list of cocktail websites is long, but finding non-alcoholic proxies can be tough, as alcohol’s more sober cousins often succumb to one of a few common pitfalls: when they aren’t a total sugar bomb, they are often hidden on other recipe sites and blogs alongside alcohol promotion, which can be triggering for those in recovery. Swizzle & Salud is a site dedicated to drink aficionados who want to explore all things mixology in one place. 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+The initial build of this application was completed in two weeks, using React and CSS for styling. My goals were to incorporate full CRUD functionality, engage many-to-many relationships, and 
 
-### `npm test`
+### Features
+All Users
+* Search for recipes that approximate 21+ drinks based on an equivalent spirit, category (herbal, fruity, etc.), season, and ingredients.
+* Save favorite recipes
+* Comment and share photos of their creations
+* Add, update, and delete their own concoctions to share.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Master Mixologist Admins
+* All standard user features
+* Approve newly submitted recipes
+* Have gatekeeper status of user content like comments or photos. 
 
-### `npm build`
+### Technologies used
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![HTML5](https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![React](https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Git](https://img.shields.io/badge/git%20-%23F05033.svg?&style=for-the-badge&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white) ![JSON Server](https://img.shields.io/badge/JSON_Server%20-%232a2e2a.svg?&style=for-the-badge&logo=JSON&logoColor=white) ![Visual Studio Code](https://img.shields.io/badge/VSCode%20-%23007ACC.svg?&style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Created by Jessalynn Whyte
 
-### `npm eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<a href="https://www.github.com/jwhyteBNA/" target="_blank"><img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white" alt="Jessalynn Whyte GitHub" style="height: auto !important;width: auto !important;" /></a> <a href="https://www.linkedin.com/in/jessalynnwhyte/" target="_blank"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" alt="Jessalynn Whyte LinkedIn" style="height: auto !important;width: auto !important;" /></a>
