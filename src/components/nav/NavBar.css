@@ -4,6 +4,10 @@
     justify-content: left;
 }
 
+.navbar-item img {
+    max-height: 3rem;
+}
+
 .navbar__item {
     flex-basis: 20%;
     list-style-type: none;

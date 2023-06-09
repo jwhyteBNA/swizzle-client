@@ -1,10 +1,11 @@
-@import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
+@import url('https://fonts.googleapis.com/css2?family=Limelight&family=Montserrat+Alternates:wght@100;200;300&family=Montserrat+Subrayada&family=Poiret+One&display=swap');
+
 /*Typography
 --------------------------------------------------------------*/
 
 body, button, input, select, textarea {
     color: #404040;
-    font-family: "Comfortaa", Arial, sans-serif;
+    font-family: 'Montserrat Alternates', sans-serif;
     font-size: 1rem;
     line-height: 1.5;
     padding: 0;
@@ -12,7 +13,7 @@ body, button, input, select, textarea {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Patua One", serif;
+    font-family: 'Limelight', cursive;
     letter-spacing: 2px;
 }
 
@@ -41,7 +42,7 @@ code {
 /* General button style */
 .btn {
 	border: none;
-	font-family: Menlo;
+	font-family: 'Limelight', cursive;
 	font-size: inherit;
 	color: inherit;
 	background: none;
