@@ -7,8 +7,8 @@ export const getComments = () => {
         .then(response => response.json())
 }
 
-export const getPostComments = (postId) => {
-    return fetch(`http://localhost:8000/comments/postcomments/${postId}`, {
+export const getRecipeComments = (recipeId) => {
+    return fetch(`http://localhost:8000/comments/recipecomments/${recipeId}`, {
         headers:{
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
         }
@@ -16,8 +16,8 @@ export const getPostComments = (postId) => {
         .then(response => response.json())
 }
 
-export const getCommentsByPostId = (postId) => {
-    return fetch(`http://localhost:8000/comments?post_id=${postId}`, {
+export const getCommentsByRecipeId = (recipeId) => {
+    return fetch(`http://localhost:8000/comments?recipe_id=${recipeId}`, {
         headers:{
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
         }

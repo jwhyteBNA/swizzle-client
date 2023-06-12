@@ -4,6 +4,7 @@ import { Register } from "../components/auth/Register"
 import { Authorized } from "./Authorized"
 import { TagList } from "../components/tags/TagList"
 import { CategoryList } from "../components/categories/CategoryList"
+import { AllRecipes } from "../components/recipes/AllRecipes"
 
 
 export const ApplicationViews = ({ token, setToken }) => {
@@ -12,6 +13,7 @@ export const ApplicationViews = ({ token, setToken }) => {
             <Route path="/login" element={<Login setToken={setToken} />} />
             <Route path="/register" element={<Register setToken={setToken} />} />
             <Route element={<Authorized token={token} />}>
+                <Route path="/recipes" element={<AllRecipes />} />
                 <Route path="/tagmanager" element={<TagList/>}/>
                 <Route path="/categorymanager" element={<CategoryList/>}/>
                 {/* Add Routes here */}

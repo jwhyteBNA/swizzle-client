@@ -11,6 +11,8 @@ export const AllRecipes = () => {
     const [categories, setCategories] = useState([])
     const [mixologists, setMixologists] = useState([])
     const [tags, setTags] = useState([])
+    const [ingredients, setIngredients] =useState([])
+    const [measurements, setMeasurements] = useState([])
     const [filterByMixologist, setFilterByMixologist] = useState()
     const [filterByCategory, setFilterByCategory] = useState()
     const [filterByTag, setFilterByTag] = useState()

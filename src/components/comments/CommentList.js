@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getComments, createComment, getCommentsByPostId, getPostComments, deleteComment } from "../../managers/CommentManager";
+import { getComments, createComment, getCommentsByRecipeId, getRecipeComments, deleteComment } from "../../managers/CommentManager";
 
 export const CommentList = () => {
     const [comments, setComments] = useState([])
@@ -10,18 +10,18 @@ export const CommentList = () => {
         image_url: "",
         created_on: new Date().toISOString().slice(0, 10),
         mixologist: "",
-        post: postId
+        recipe: recipeId
     })
 
     const getFilteredComments = () => {
-        getCommentsByPostId(postId)
+        getCommentsByRecipeId(recipeId)
         .then((commentData) => {
             setComments(commentData);
     })}
 
     useEffect(() => {
         getFilteredComments()
-    }, [postId]);
+    }, [recipeId]);
 
 
     const handleInputChange = (event) => {
@@ -34,9 +34,10 @@ export const CommentList = () => {
         
         const newComment = {
             content: comment.content,
+            image_url: comment.image_url,
             created_on: comment.created_on,
-            author: parseInt(comment.author),
-            post: parseInt(comment.post)
+            mixologist: parseInt(comment.mixologist),
+            recipe: parseInt(comment.recipe)
         };
 
         createComment(newComment)
@@ -71,11 +72,11 @@ export const CommentList = () => {
             <h2>Comments</h2>
             {comments.map((comment) => (
                 <div key={comment.id}>
+                    <img src={comment?.image_url}/>
                     <p>{comment.content}</p>
-                    <p>{comment.author.user.username}</p>
+                    <p>{comment.mixologist.user.username}</p>
                     <p>{comment.created_on}</p>
                     <img className="action__button" src="/trashcan.png" onClick={() => handleDeleteComment(comment.id)}></img>
-                    {/* Display additional information about the comment here */}
                 </div>
             ))}
         </div>
