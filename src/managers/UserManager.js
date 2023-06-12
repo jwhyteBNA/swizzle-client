@@ -25,7 +25,7 @@ export const subscribeToMixologist = (mixologistId) => {
   }).then((res) => res.json());
 };
 
-export const unsubscribeToUser = (rareUserId) => {
+export const unsubscribeToUser = (mixologistId) => {
   return fetch(
     `http://localhost:8000/mixologists/${mixologistId}/unsubscribe`,
     {
