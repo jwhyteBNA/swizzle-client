@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getComments, createComment, getCommentsByRecipeId, getRecipeComments, deleteComment } from "../../managers/CommentManager";
+import { createComment, getCommentsByRecipeId, deleteComment } from "../../managers/CommentManager";
 
 export const CommentList = () => {
     const [comments, setComments] = useState([])
-    const { postId } = useParams()
+    const { recipeId } = useParams()
     const [comment, setComment] = useState({ 
         content: "",
-        image_url: "",
+        image_url: null,
         created_on: new Date().toISOString().slice(0, 10),
         mixologist: "",
         recipe: recipeId
@@ -59,10 +59,18 @@ export const CommentList = () => {
         <div>
             <form>
                 <label htmlFor="content">New Comment: </label>
-                <input
+                <textarea
                     type="text"
                     name="content"
                     value={comment.content}
+                    placeholder="Comment"
+                    onChange={handleInputChange}
+                />
+                <textarea
+                    type="text"
+                    name="image_url"
+                    value={comment.image_url}
+                    placeholder="Image Link"
                     onChange={handleInputChange}
                 />
                 <button type="button" onClick={saveComment}>
@@ -76,7 +84,12 @@ export const CommentList = () => {
                     <p>{comment.content}</p>
                     <p>{comment.mixologist.user.username}</p>
                     <p>{comment.created_on}</p>
-                    <img className="action__button" src="/trashcan.png" onClick={() => handleDeleteComment(comment.id)}></img>
+                    {comment.can_edit ? 
+                    <img className="action__button" src="/trashcan.png" onClick={() => handleDeleteComment(comment.id)}></img> 
+                    :
+                    ""
+                    }
+                    
                 </div>
             ))}
         </div>

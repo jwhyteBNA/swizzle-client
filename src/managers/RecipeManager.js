@@ -92,3 +92,12 @@ export const filterRecipesByTag = (tagId) => {
     })
         .then(response => response.json())
 }
+
+export const getSubscriptions = () => {
+    return fetch("http://localhost:8000/recipes/mysubscriptions", {
+        headers:{
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+        }
+    })
+        .then(response => response.json())
+}
