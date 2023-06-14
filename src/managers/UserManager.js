@@ -1,5 +1,13 @@
 export const getUsers = () => {
-  return fetch("http://localhost:8000/user", {
+  return fetch("http://localhost:8000/users", {
+    headers: {
+      Authorization: `Token ${localStorage.getItem("auth_token")}`,
+    },
+  }).then((res) => res.json());
+};
+
+export const getMixologists = () => {
+  return fetch("http://localhost:8000/mixologists", {
     headers: {
       Authorization: `Token ${localStorage.getItem("auth_token")}`,
     },
@@ -7,7 +15,7 @@ export const getUsers = () => {
 };
 
 export const getMixologist = (userId) => {
-  return fetch(`http://localhost:8000/mixologists/${userId}/`, {
+  return fetch(`http://localhost:8000/mixologists/${userId}`, {
     headers: {
       Authorization: `Token ${localStorage.getItem("auth_token")}`,
     },
@@ -25,7 +33,7 @@ export const subscribeToMixologist = (mixologistId) => {
   }).then((res) => res.json());
 };
 
-export const unsubscribeToUser = (mixologistId) => {
+export const unsubscribeToMixologist = (mixologistId) => {
   return fetch(
     `http://localhost:8000/mixologists/${mixologistId}/unsubscribe`,
     {

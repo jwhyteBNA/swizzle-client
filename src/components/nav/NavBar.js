@@ -13,13 +13,11 @@ export const NavBar = ({ token, setToken }) => {
   }
 
   return (
-    <nav className="navbar is-success mb-3" role="navigation" aria-label="main navigation">
+    <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <a className="navbar-item" href="/">
           <h1>Swizzle & Salud</h1>
         </a>
-
-        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
         <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" onClick={showMobileNavbar} ref={hamburger}>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -33,11 +31,11 @@ export const NavBar = ({ token, setToken }) => {
             token
               ?
               <>
-              <Link to="/posts" className="navbar-item">All Posts</Link>
-              <Link to="/posts/myposts" className="navbar-item">My Posts</Link>
+              <Link to="/recipes" className="navbar-item">All Recipes</Link>
+              <Link to="/recipes/myrecipes" className="navbar-item">My Recipes</Link>
               <Link to="/categorymanager" className="navbar-item">Category Manager</Link>
               <Link to="/tagmanager" className="navbar-item">Tag Manager</Link>
-              <Link to="/users" className="navbar-item">User Management</Link>
+              <Link to="/mixologists" className="navbar-item">Mixologists</Link>
               </>
               :
               ""

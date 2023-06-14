@@ -1,4 +1,4 @@
-.post {
+.recipe {
     display: flex;
     flex-direction: column;
     width: 500px;
@@ -8,7 +8,7 @@
     margin-bottom: 50px;
 }
 
-.post_detail {
+.recipe_detail {
     display: flex;
     flex-direction: column;
     width: 600px;
@@ -17,7 +17,7 @@
     margin-top: 50px;
 }
 
-.update_post {
+.update_recipe {
     display: flex;
     flex-direction: column;
     width: 500px;
@@ -27,19 +27,19 @@
     margin-bottom: 50px;
 }
 
-.post__header {
+.recipe__header {
     display: flex;
     justify-content: space-between;
 }
 
-.post__footer {
+.recipe__footer {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.post__title {
+.recipe__title {
     font-weight: bolder;
     font-size: 22px;
     text-align: left;
@@ -48,14 +48,14 @@
     width: 400px;
 }
 
-.post__title_detail {
+.recipe__title_detail {
     font-weight: bolder;
     font-size: 22px;
     text-align: center;
     margin-bottom: 10px;
 }
 
-.update__post_header {
+.update__recipe_header {
     font-weight: bolder;
     font-size: 22px;
     text-align: center;
@@ -68,43 +68,42 @@
     margin-bottom: 20px;
 }
 
-.post__image {
+.recipe__image {
     width: 500px;
     height: auto;
     cursor: pointer;
 }
 
-.post__image_detail {
+.recipe__image_detail {
     width: 600px;
     height: auto;
 }
 
-.post__category_detail {
+.recipe__category_detail {
     text-align: right;
     margin-bottom: 5px;
     font-size: 12px;
     font-style: italic;
 }
 
-.post__author_detail {
+.recipe__author_detail {
     font-size: 14px;
     cursor: pointer;
 }
 
-.post__publication_date {
+.recipe__publication_date {
     text-align: right;
     font-size: 12px;
     font-style: italic;
     margin-top: 10px;
 }
 
-.post__publication_date_detail {
+.recipe__publication_date_detail {
     font-size: 14px;
 }
 
-.post__content_detail {
-    width: 600px;
-    margin-top: 20px;
+.recipe__content_detail {
+    width: auto;
 }
 
 .comments__reactions {
@@ -123,16 +122,16 @@
     cursor: pointer;
 }
 
-.post__author {
+.recipe__author {
     font-size: 15px;
     cursor: pointer;
 }
 
-.post__reaction_count {
+.recipe__reaction_count {
     font-size: 12px;
 }
 
-.add__home_posts {
+.add__home_recipes {
     display: flex;
     width: 500px;
     justify-content: flex-end;
@@ -142,7 +141,7 @@
     margin-bottom: -25px;
 }
 
-.add__posts {
+.add__recipes {
     display: flex;
     width: 1000px;
     justify-content: flex-end;
@@ -152,19 +151,19 @@
     margin-bottom: -25px;
 }
 
-.add__posts_button {
-    width: 35px;
+.add__recipes_button {
+    width: auto;
     height: 35px;
     line-height: 10px;
     font-size: 25px;
     text-align: center;
-    background-color: #48C88C;
+    background-color: #ae48c8;
     color: white;
     border: none;
     cursor: pointer;
 }
 
-.posts__grid {
+.recipes__grid {
     display: flex;
     justify-content: space-evenly;
     margin-top: 50px;
@@ -190,7 +189,7 @@
     border: 1px solid black;
 }
 
-.post__titles {
+.recipe__titles {
     display: block;
     text-align: left;
     width: 200px;
@@ -199,7 +198,7 @@
     cursor: pointer;
 }
 
-.post__authors {
+.recipe__authors {
     display: block;
     text-align: center;
     font-style: italic;
@@ -209,7 +208,7 @@
     cursor: pointer;
 }
 
-.post__dates {
+.recipe__dates {
     display: block;
     text-align: center;
     width: 200px;
@@ -217,7 +216,7 @@
     border-right: 1px solid black;
 }
 
-.post__categories {
+.recipe__categories {
     display: block;
     text-align: center;
     width: 200px;
@@ -225,21 +224,25 @@
     border-right: 1px solid black;
 }
 
-.post__tags {
+.recipe__tags {
     display: block;
     text-align: center;
     width: 200px;
     padding: 10px;
 }
 
-.postForm {
+.recipeForm {
     width: 500px;
+    display: flex;
+    flex-flow: row wrap;
+    align-self: center;
     margin-left: auto;
     margin-right: auto;
     margin-top: 25px;
+    padding-bottom: 30px;
 }
 
-.PostForm__title {
+.RecipeForm__title {
     text-align: center;
     font-size: 25px;
     margin-top: 50px;
@@ -273,7 +276,7 @@
 }
 
 .form-control-category {
-    width: 125px;
+    width: auto;
     height: 25px;
     margin-bottom: 25px;
 }
