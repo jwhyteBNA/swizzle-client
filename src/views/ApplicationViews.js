@@ -1,6 +1,4 @@
 import { Route, Routes } from "react-router-dom"
-import { Login } from "../components/auth/Login"
-import { Register } from "../components/auth/Register"
 import { Authorized } from "./Authorized"
 import { TagList } from "../components/tags/TagList"
 import { CategoryList } from "../components/categories/CategoryList"
@@ -15,11 +13,9 @@ import { MixologistList } from "../components/users/UserList"
 import { UserDetail } from "../components/users/UserDetails"
 
 
-export const ApplicationViews = ({ token, setToken }) => {
+export const ApplicationViews = ({ token }) => {
     return <>
         <Routes>
-            <Route path="/login" element={<Login setToken={setToken} />} />
-            <Route path="/register" element={<Register setToken={setToken} />} />
             <Route element={<Authorized token={token} />}>
                 <Route path="/" element={<RecipeList />} />
                 <Route path="/recipes" element={<AllRecipes />} />

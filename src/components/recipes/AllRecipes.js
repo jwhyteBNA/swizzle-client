@@ -88,6 +88,20 @@ export const AllRecipes = () => {
 
   return (
     <>
+    <div className="select_filters">
+    <section>
+        <select
+          value={filterByMixologist}
+          onChange={(evt) => setFilterByMixologist(evt.target.value)}
+        >
+          <option value="">Select Mixologist</option>
+          {mixologists.map((mixologist) => (
+            <option key={`mixologist--${mixologist.id}`} value={mixologist.id}>
+              {mixologist.user.username}
+            </option>
+          ))}
+        </select>
+      </section>
       <section>
         <select
           value={filterByCategory}
@@ -97,19 +111,6 @@ export const AllRecipes = () => {
           {categories.map((category) => (
             <option key={`category--${category.id}`} value={category.id}>
               {category.name}
-            </option>
-          ))}
-        </select>
-      </section>
-      <section>
-        <select
-          value={filterByMixologist}
-          onChange={(evt) => setFilterByMixologist(evt.target.value)}
-        >
-          <option value="">Select Mixologist</option>
-          {mixologists.map((mixologist) => (
-            <option key={`mixologist--${mixologist.id}`} value={mixologist.id}>
-              {mixologist.user.username}
             </option>
           ))}
         </select>
@@ -127,10 +128,12 @@ export const AllRecipes = () => {
           ))}
         </select>
       </section>
-      <section>
+      </div>
+      <section className="search_filter">
         <input
+          className="searchbox"
           type="text"
-          placeholder="Enter text"
+          placeholder="Search by Ingredient"
           onChange={(changeEvent) => {
             setFilterBySearch(changeEvent.target.value);
           }}

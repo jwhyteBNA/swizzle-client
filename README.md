@@ -18,9 +18,11 @@ All Users
 * Add, update, and delete their own concoctions to share.
 
 Master Mixologist Admins
-* All standard user features
-* Approve newly submitted recipes
-* Have gatekeeper status of user content like comments or photos. 
+* Have gatekeeper status of user content including recipes, comments, and photos. 
+
+### Server Side Code
+<a href="https://github.com/jwhyteBNA/Swizzle-Server" target="_blank"><img src="https://img.shields.io/badge/Click_here%20-%236ae689.svg?&style=for-the-badge&&logoColor=white" alt="Swizzle&Salud Server-side Repo" style="height: auto !important; width: auto !important;" /></a>
+
 
 ### Technologies used
 
