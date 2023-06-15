@@ -62,38 +62,42 @@ export const TagList = () => {
       <div className="tagList">
         <h1 className="tagHeadline">Tags</h1>
         {tags.map((tag) => (
-          <div key={tag.id} className="tagRow">
-            {editingTag === tag.id ? (
-              <form onSubmit={saveTag}>
-                <input
-                  type="text"
-                  name="label"
-                  required
-                  className="form-control"
-                  value={editedTag.label}
-                  onChange={handleEditInputChange}
-                />
-                <button type="submit" className="btn btn-primary">
-                  Save
-                </button>
-              </form>
-            ) : (
-              <>
-                <span>{tag.label}</span>
-                <img
-                  className="action__button"
-                  src="gear.png"
-                  onClick={() => handleEditTag(tag.id)}
-                ></img>
-                <img
-                  className="action__button"
-                  src="trashcan.png"
-                  onClick={() => handleDeleteTag(tag.id)}
-                ></img>
-              </>
-            )}
-          </div>
-        ))}
+  <div key={tag.id} className="tagRow">
+    {tag.can_edit ? (
+      editingTag === tag.id ? (
+        <form onSubmit={saveTag}>
+          <input
+            type="text"
+            name="label"
+            required
+            className="form-control"
+            value={editedTag.label}
+            onChange={handleEditInputChange}
+          />
+          <button type="submit" className="btn btn-primary">
+            Save
+          </button>
+        </form>
+      ) : (
+        <>
+          <span>{tag.label}</span>
+          <img
+            className="action__button"
+            src="gear.png"
+            onClick={() => handleEditTag(tag.id)}
+          ></img>
+          <img
+            className="action__button"
+            src="trashcan.png"
+            onClick={() => handleDeleteTag(tag.id)}
+          ></img>
+        </>
+      )
+    ) : 
+    <div>{tag.label}</div>}
+  </div>
+))}
+
       </div>
       <div className="tagForm">
         <TagForm getAllTags={getAllTags} />

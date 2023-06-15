@@ -63,44 +63,51 @@ export const CategoryList = () => {
         <h1 className="categoryHeadline">Categories</h1>
         {categories.map((category) => (
           <div key={category.id} className="categoryRow">
-            {editingCategory === category.id ? (
-              <form onSubmit={saveCategory}>
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  className="catform-control"
-                  value={editedCategory.name}
-                  onChange={handleEditInputChange}
-                />
-                <input
-                  type="text"
-                  name="description"
-                  required
-                  className="catform-control"
-                  value={editedCategory.description}
-                  onChange={handleEditInputChange}
-                />
-                <button type="submit" className="btn btn-primary">
-                  Save
-                </button>
-              </form>
-            ) : (
-              <>
-                <span>{category.name}</span>
-                <span>{category.description}</span>
-                <img
-                  className="action__button"
-                  src="gear.png"
-                  onClick={() => handleEditCategory(category.id)}
-                ></img>
-                <img
-                  className="action__button"
-                  src="trashcan.png"
-                  onClick={() => handleDeleteCategory(category.id)}
-                ></img>
-              </>
-            )}
+            {category.can_edit ? (
+              editingCategory === category.id ? (
+                <form onSubmit={saveCategory}>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    className="catform-control"
+                    value={editedCategory.name}
+                    onChange={handleEditInputChange}
+                  />
+                  <input
+                    type="text"
+                    name="description"
+                    required
+                    className="catform-control"
+                    value={editedCategory.description}
+                    onChange={handleEditInputChange}
+                  />
+                  <button type="submit" className="btn btn-primary">
+                    Save
+                  </button>
+                </form>
+              ) : (
+                <>
+                  <span className= "span_name">{category.name}</span>
+                  <span className= "span_description">{category.description}</span>
+                  <span className= "span_buttons">
+                  <img
+                    className="action__button"
+                    src="gear.png"
+                    onClick={() => handleEditCategory(category.id)}
+                  ></img>
+                  <img
+                    className="action__button"
+                    src="trashcan.png"
+                    onClick={() => handleDeleteCategory(category.id)}
+                  ></img>
+                  </span>
+                </>
+              )
+            )
+            :
+            <div>{category.name}</div>
+            }
           </div>
         ))}
       </div>

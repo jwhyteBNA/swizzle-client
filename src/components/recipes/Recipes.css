@@ -8,6 +8,24 @@
     margin-bottom: 50px;
 }
 
+.select_filters {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.search_filter {
+    display: flex;
+    justify-content: center;
+}
+
+.searchbox {
+    padding: 2px;
+    margin-top: 25px;
+    width: 12rem;
+}
+
 .recipe_detail {
     display: flex;
     flex-direction: column;
@@ -147,7 +165,6 @@
     justify-content: flex-end;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
     margin-bottom: -25px;
 }
 
@@ -174,7 +191,6 @@
 }
 
 .grid__header {
-    border: 1px solid black;
     width: 200px;
     text-align: center;
 }

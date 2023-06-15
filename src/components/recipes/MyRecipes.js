@@ -26,7 +26,7 @@ export const MyRecipes = () => {
         <article className="add__home_recipes">
         <button className="add__recipes_button" onClick={() => {
             navigate({ pathname: "/recipes/publish" })
-            }}>+</button>
+            }}>Add 🧉</button>
     </article>
     <article className="recipes">
     {

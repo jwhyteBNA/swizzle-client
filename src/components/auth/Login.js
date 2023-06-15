@@ -2,6 +2,7 @@ import { useRef, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { loginUser } from "../../managers/AuthManager"
 
+
 export const Login = ({ setToken }) => {
   const username = useRef()
   const password = useRef()
@@ -28,8 +29,8 @@ export const Login = ({ setToken }) => {
   }
 
   return (
-    <section className="columns is-centered">
-      <form className="column is-two-thirds" onSubmit={handleLogin}>
+    <section className="login__form">
+      <form className="form_detail" onSubmit={handleLogin}>
         <h1 className="title">Swizzle and Salud</h1>
         <p className="subtitle">Welcome!</p>
 
@@ -52,7 +53,7 @@ export const Login = ({ setToken }) => {
             <button className="button is-link" type="submit" >Submit</button>
           </div>
           <div className="control">
-            <Link to="/register" className="button is-link is-light">Cancel</Link>
+            <Link to="/register" className="button is-link is-light">Register</Link>
           </div>
         </div>
         {
