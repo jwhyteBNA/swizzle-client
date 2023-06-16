@@ -1,0 +1,26 @@
+.comment_form {
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap;
+    margin: 20px;
+    width: 400px;
+    height: 200px;
+    border: 2px solid #e41154;
+    border-radius: .5rem;
+}
+
+.comment_btn {
+    margin-top: 15px;
+}
+
+.comment_form_input {
+    margin: 5px;
+}
+
+.comment_container {
+
+}
+
+.action__button {
+    width: 40px;
+}

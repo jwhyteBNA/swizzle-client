@@ -1,7 +1,18 @@
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 import { registerUser } from "../../managers/AuthManager"
+import {
+  FaLock,
+  FaUser,
+  FaUserCircle,
+  FaRegAddressBook,
+  FaEye,
+  FaEyeSlash,
+  FaBook
+} from "react-icons/fa";
+import ss_neon from  "../../images/ss_neon.gif"
+import "./Auth.css"
 
 export const Register = ({setToken}) => {
   const firstName = useRef()
@@ -13,6 +24,7 @@ export const Register = ({setToken}) => {
   const verifyPassword = useRef()
   const passwordDialog = useRef()
   const navigate = useNavigate()
+  const [visible, setVisible] = useState(false);
 
   const handleRegister = (e) => {
     e.preventDefault()
@@ -40,72 +52,106 @@ export const Register = ({setToken}) => {
   }
 
   return (
-    <section className="registration_form">
+    <main className ="login-main">
+      <div className="login-container">
+        <div className="logo-img">
+          <img src={ss_neon} />
+        </div>
+    <section className="login-content">
       <form className="form-detail" onSubmit={handleRegister}>
-      <h1 className="title">Rare Publishing</h1>
-        <p className="subtitle">Create an account</p>
-        <div className="field">
-          <label className="label">First Name</label>
-          <div className="control">
-            <input className="input" type="text" ref={firstName} />
+      <h2 className="title">Create An Account</h2>
+      <Link to="/login" className="login-link">Back to Login</Link>
+
+        <div className="input-div">
+          <div className="i">
+                <i className="fas fa-user">
+                  <FaUser />
+                </i>
+              </div>
+          <div className="div">
+            <input className="input" type="text" placeholder="First Name" ref={firstName} />
           </div>
         </div>
 
-        <div className="field">
-          <label className="label">Last Name</label>
-          <div className="control">
-            <input className="input" type="text" ref={lastName} />
+        <div className="input-div">
+        <div className="i">
+                <i className="fas fa-user">
+                  <FaUser />
+                </i>
+              </div>
+          <div className="div">
+            <input className="input" 
+            placeholder="Last Name"
+            type="text" ref={lastName} />
           </div>
         </div>
 
-        <div className="field">
-          <label className="label">Username</label>
-          <div className="control">
-            <input className="input" type="text" ref={username} />
+        <div className="input-div">
+          <div className="i">
+                <i className="fas fa-user">
+                  <FaUserCircle />
+                </i>
+              </div>
+          <div className="div">
+            <input className="input" placeholder="Username" type="text" ref={username} />
           </div>
         </div>
 
-        <div className="field">
-          <label className="label">Email</label>
-          <div className="control">
-            <input className="input" type="email" ref={email} />
+        <div className="input-div">
+        <div className="i">
+                <i className="fas fa-user">
+                  <FaRegAddressBook />
+                </i>
+              </div>
+          <div className="div">
+            <input className="input" type="email" placeholder="Email Address" ref={email} />
           </div>
         </div>
 
-        <div className="field">
-          <label className="label">Password</label>
-          <div className="field-body">
-            <div className="field">
-              <p className="control is-expanded">
-                <input className="input" type="password" placeholder="Password" ref={password} />
-              </p>
+        <div className="input-div">
+        <div className="i">
+                <i className="fas fa-lock">
+                  <FaLock />
+                  <div className="fas" onClick={() => setVisible(!visible)}>
+                    {visible ? <FaEye /> : <FaEyeSlash />}
+                  </div>
+                </i>
+              </div>
+              <div className="div">
+                <input className="input" type={visible ? "text" : "password"} placeholder="Password" ref={password} />
+            </div>
             </div>
 
-            <div className="field">
-              <p className="control is-expanded">
+            <div className="input-div">
+            <div className="i">
+                <i className="fas fa-lock">
+                  <FaLock />
+                </i>
+              </div>
+            <div className="div">
                 <input className="input" type="password" placeholder="Verify Password" ref={verifyPassword} />
-              </p>
             </div>
           </div>
+
+        <div className="input-div">
+          <div className="i">
+                <i className="fas fa-lock">
+                  <FaBook />
+                </i>
+              </div>
+          <div className="control">
+            <textarea autoFocus
+            rows="2"
+            cols="50"className="textarea" type="text" placeholder="Tell us about yourself..." ref={bio}></textarea>
+          </div>
         </div>
 
-        <div className="field">
-          <label className="label">Bio</label>
-          <div className="control">
-            <textarea className="textarea" placeholder="Tell us about yourself..." ref={bio}></textarea>
-          </div>
-        </div>
+        <button className="login-btn" type="submit">Submit</button>
 
-        <div className="field is-grouped">
-          <div className="control">
-            <button className="button is-link" type="submit">Submit</button>
-          </div>
-          <div className="control">
-            <Link to="/login" className="button is-link is-light">Login</Link>
-          </div>
-        </div>
 
       </form>
     </section>
+    </div>
+    </main>
   )
 }

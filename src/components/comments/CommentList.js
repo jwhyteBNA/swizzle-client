@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { createComment, getCommentsByRecipeId, deleteComment } from "../../managers/CommentManager";
+import "./comment.css"
 
 export const CommentList = () => {
     const [comments, setComments] = useState([])
     const { recipeId } = useParams()
     const [comment, setComment] = useState({ 
         content: "",
-        image_url: null,
+        image_url: "",
         created_on: new Date().toISOString().slice(0, 10),
         mixologist: "",
         recipe: recipeId
@@ -57,33 +58,37 @@ export const CommentList = () => {
 
     return (
         <div>
-            <form>
-                <label htmlFor="content">New Comment: </label>
+            <form className="comment_form">
+                <h3 htmlFor="content">New Comment: </h3>
                 <textarea
+                    className="comment_form_input"
                     type="text"
                     name="content"
                     value={comment.content}
                     placeholder="Comment"
                     onChange={handleInputChange}
                 />
-                <textarea
+                <input
+                    className="comment_form_input"
                     type="text"
                     name="image_url"
                     value={comment.image_url}
                     placeholder="Image Link"
                     onChange={handleInputChange}
                 />
-                <button type="button" onClick={saveComment}>
+                <button className="comment_btn" type="button" onClick={saveComment}>
                     Save Comment
                 </button>
             </form>
+
             <h2>Comments</h2>
+            <div className="comment_container">
             {comments.map((comment) => (
                 <div key={comment.id}>
                     <img src={comment?.image_url}/>
                     <p>{comment.content}</p>
-                    <p>{comment.mixologist.user.username}</p>
-                    <p>{comment.created_on}</p>
+                    <h4>{comment.mixologist.user.username}</h4>
+                    <h4>{comment.created_on}</h4>
                     {comment.can_edit ? 
                     <img className="action__button" src="/trashcan.png" onClick={() => handleDeleteComment(comment.id)}></img> 
                     :
@@ -92,6 +97,7 @@ export const CommentList = () => {
                     
                 </div>
             ))}
+            </div>
         </div>
     );
 };

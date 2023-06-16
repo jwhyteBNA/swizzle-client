@@ -16,16 +16,15 @@ export const MixologistList = () => {
 
     return (
         <div className="userListContainer">
-            <h1>User Management</h1>
+            <h1>Mixologists</h1>
             {users.map(user => (
                 <div key={user.id} className="userListRow">
                     <div>
-                        <span className="property">Username:</span> 
-                        <Link to={`/mixologists/${user.id}`} className="value">{user.username}</Link>
+                        <span className="property">Username: 
+                        <Link to={`/mixologists/${user.id}`} className="value"> {user.username}</Link></span> 
                     </div>
-                    <div><span className="property">First Name:</span> <span className="value">{user.first_name}</span></div>
-                    <div><span className="property">Last Name:</span> <span className="value">{user.last_name}</span></div>
-                    <div><span className="property">Email:</span> <span className="value">{user.email}</span></div>
+                    <div><span className="property"> Name: {user.first_name} {user.last_name}</span></div>
+                    <div><span className="property">Email: {user.email}</span></div>
                 </div>
             ))}
         </div>

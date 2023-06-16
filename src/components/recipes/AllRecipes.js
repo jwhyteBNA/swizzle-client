@@ -157,7 +157,6 @@ export const AllRecipes = () => {
       </section>
       {recipes.map((recipe) => {
         return (
-          <>
             <section className="grid__items" key={`recipe--${recipe.id}`}>
               <Link className="recipe__titles" to={`/recipes/${recipe.id}`}>
                 {recipe.name}
@@ -173,7 +172,6 @@ export const AllRecipes = () => {
                 {recipe.tag?.map((tag) => tag.label).join(", ")}
               </div>
             </section>
-          </>
         );
       })}
     </>

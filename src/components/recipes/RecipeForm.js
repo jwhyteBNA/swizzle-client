@@ -104,7 +104,6 @@ export const RecipeForm = () => {
                     <div className="form-group">
                         <div className="input__field">
                             <input
-                                required autoFocus
                                 type="text"
                                 className="form-control-image"
                                 placeholder="Image URL"
@@ -123,7 +122,6 @@ export const RecipeForm = () => {
                     <div className="form-group">
                         <div className="input__field">
                             <input
-                                required autoFocus
                                 type="text"
                                 className="form-control-image"
                                 placeholder="Original Link, Optional"
@@ -142,7 +140,6 @@ export const RecipeForm = () => {
                     <div className="form-group">
                         <div className="input__field">
                             <textarea
-                                required autoFocus
                                 type="text"
                                 className="form-control-content"
                                 placeholder="Ingredients"
@@ -161,7 +158,6 @@ export const RecipeForm = () => {
                     <div className="form-group">
                         <div className="input__field">
                             <textarea
-                                required autoFocus
                                 type="text"
                                 className="form-control-content"
                                 placeholder="directions"
@@ -180,7 +176,6 @@ export const RecipeForm = () => {
                     <div className="form-group">
                         <div className="input__field">
                             <textarea
-                                required autoFocus
                                 type="text"
                                 className="form-control-content"
                                 placeholder="Notes"
@@ -197,11 +192,10 @@ export const RecipeForm = () => {
                 </fieldset>
                 <fieldset>
                     <div className="form-group">
-                        <div className="input__field">
+                        <div className="input_field">
                             <input
-                                required autoFocus
                                 type="number"
-                                className="form-control-content"
+                                className="form-control-number"
                                 placeholder="Servings"
                                 value={recipe.servings}
                                 onChange={
@@ -238,7 +232,7 @@ export const RecipeForm = () => {
                 </fieldset>
                 <fieldset>
                     <div className="form-group">
-                        <div className="input__field">
+                        <div className="tag__field">
                                 {tags.map((tag) => (
                                     <label key={tag.id} className="checkbox">
                                         <input
@@ -259,7 +253,7 @@ export const RecipeForm = () => {
                     onClick={(clickEvent) => {
                         publishButton(clickEvent)}}
                     className="btn-publish"><b>
-                        Publish
+                        Salud!
                     </b></button>
             </form>
         </>

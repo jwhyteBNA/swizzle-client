@@ -10,13 +10,13 @@ export const UpdateRecipeForm = () => {
     const [categories, setCategories] = useState([])
     const [tags, setTags] = useState([])
     const [recipe, updateRecipe] = useState({
-        title: "",
-        publication_date: "",
+        name: "",
         image_url: "",
         original_link: "",
         ingredients: "",
         directions: "",
         notes: "",
+        servings: "",
         approved: true,
         category: "",
         tag: []
@@ -132,7 +132,7 @@ export const UpdateRecipeForm = () => {
         </fieldset>
         <fieldset>
             <div className="form-group">
-                <label htmlFor="directions">directions:</label>
+                <label htmlFor="directions">Directions:</label>
                 <textarea
                     name="directions"
                     required autoFocus
@@ -221,8 +221,8 @@ export const UpdateRecipeForm = () => {
             }
 
             updateRecipeDetails(updatedRecipe)
-            .then(() => navigate("/recipes"))}}>
-            Save
+            .then(() => navigate(`/recipes/${recipe.id}`))}}>
+            Salud!
         </button>
     </form>
 </>
