@@ -8,6 +8,10 @@
     margin-bottom: 50px;
 }
 
+.recipes {
+    margin-bottom: 30px;
+}
+
 .select_filters {
     margin-top: 25px;
     display: flex;
@@ -132,7 +136,7 @@
 
 .comment__button {
     width: 130px;
-    background-color: #48C88C;
+    background-color: #8addf0;
     color: white;
     font-weight: bold;
     border: none;
@@ -214,6 +218,10 @@
     cursor: pointer;
 }
 
+.recipe__detail {
+    margin: 15px 0px 7px 0px;
+}
+
 .recipe__authors {
     display: block;
     text-align: center;
@@ -273,7 +281,7 @@
 .form-control-title {
     width: 500px;
     height: 35px;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
 
 }
 
@@ -286,13 +294,13 @@
 
 .form-control-content {
     width: 500px;
-    height: 250px;
-    margin-bottom: 25px;
+    height: 200px;
+    margin-bottom: 5px;
     padding: 5px;
 }
 
 .form-control-category {
-    width: auto;
+    width: 500px;
     height: 25px;
     margin-bottom: 25px;
 }
@@ -306,7 +314,7 @@
     width: 75px;
     height: 35px;
     color: white;
-    background-color: #48C88C;
+    background-color: #8addf0;
     border: none;
     border-radius: 5px;
 }
@@ -315,11 +323,11 @@
     width: 75px;
     height: 35px;
     color: white;
+    text-align: center;
     background-color: #48C88C;
     border: none;
-    border-radius: 5px;
+    border-radius: 3px;
     align-self: center;
-    font-weight: bold;
 }
 
 .action__buttons_container {
@@ -337,5 +345,10 @@
 .gear__buttons {
     width: 2%;
     height: auto;
+}
+
+.label.checkbox {
+    display: flex;
+    flex-flow:row-reverse;
 }
 

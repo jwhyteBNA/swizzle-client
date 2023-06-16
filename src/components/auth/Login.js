@@ -1,13 +1,16 @@
 import { useRef, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { loginUser } from "../../managers/AuthManager"
-
+import { FaLock, FaUserCircle, FaEye, FaEyeSlash } from "react-icons/fa"
+import ss_neon from  "../../images/ss_neon.gif"
+import "./Auth.css"
 
 export const Login = ({ setToken }) => {
   const username = useRef()
   const password = useRef()
   const navigate = useNavigate()
   const [isUnsuccessful, setisUnsuccessful] = useState(false)
+  const [visible, setVisible]= useState(false)
 
   const handleLogin = (e) => {
     e.preventDefault()
@@ -29,37 +32,48 @@ export const Login = ({ setToken }) => {
   }
 
   return (
-    <section className="login__form">
-      <form className="form_detail" onSubmit={handleLogin}>
-        <h1 className="title">Swizzle and Salud</h1>
-        <p className="subtitle">Welcome!</p>
-
-        <div className="field">
-          <label className="label">Username</label>
-          <div className="control">
-            <input className="input" type="text" ref={username} />
+    <main className="login-main">
+      <div className="login-container">
+        <div className="logo-img">
+          <img src={ss_neon} />
+        </div>
+        <div className="login-content">
+      <form className="login-form" onSubmit={handleLogin}>
+      <h2 className="login-title">Welcome!</h2>
+        <div className="input-div one">
+        <div className="i">
+                <i className="fas fa-user">
+                  <FaUserCircle />
+                </i>
+              </div>
+          <div className="div">
+            <input className="input" type="text" placeholder="Username" ref={username} />
           </div>
         </div>
 
-        <div className="field">
-          <label className="label">Password</label>
-          <div className="control">
-            <input className="input" type="password" ref={password} />
+        <div className="input-div pass">
+        <div className="i">
+                <i className="fas fa-lock">
+                  <FaLock />
+                  <div className="fas" onClick={() => setVisible(!visible)}>
+                    {visible ? <FaEye /> : <FaEyeSlash />}
+                  </div>
+                </i>
+              </div>
+          <div className="div">
+            <input className="input" type={visible ? "text" : "password"} placeholder="Password" ref={password} />
           </div>
         </div>
 
-        <div className="field is-grouped">
-          <div className="control">
-            <button className="button is-link" type="submit" >Submit</button>
-          </div>
-          <div className="control">
-            <Link to="/register" className="button is-link is-light">Register</Link>
-          </div>
-        </div>
+         <Link to="/register" className="login-link">Need to Register?</Link>
+            <button className="login-btn" type="submit" >Enter Swizzle & Salud</button>
+          
         {
-          isUnsuccessful ? <p className="help is-danger">Username or password not valid</p> : ''
+          isUnsuccessful ?  window.alert("Oops, your password or username isn't right! Try again or register to enter.") : ''
         }
       </form>
-    </section>
+      </div>
+      </div>
+    </main>
   )
 }

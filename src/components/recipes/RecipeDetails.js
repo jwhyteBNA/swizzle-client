@@ -26,7 +26,7 @@ export const RecipeDetails = () => {
     <>
       <article className="recipes">
         <section className="recipe_detail">
-        <h3 className="recipe__name_detail">{recipe.name}</h3>
+          <h2 className="recipe__detail">{recipe.name}</h2>
           {recipe.tag?.map((tag) => {
             return <div key={tag.id}>{tag.label}</div>;
           })}
@@ -38,7 +38,7 @@ export const RecipeDetails = () => {
             <div>
               <div
                 className="recipe__mixologist_detail"
-                onClick={() => navigate(`/users/${recipe.mixologist.user.id}`)}
+                onClick={() => navigate(`/mixologists/${recipe.mixologist.user.id}`)}
               >
                 By: <b>{recipe.mixologist?.user?.username}</b>
               </div>
@@ -54,38 +54,54 @@ export const RecipeDetails = () => {
             </button>
             <div>Servings: {recipe.servings} </div>
           </section>
-          <h3>Ingredients</h3>
-          <div className="recipe__content_detail">{recipe.ingredients}</div>
-          <h3>Directions</h3>
-          <div className="recipe__content_detail">{recipe.directions}</div>
+          <h3 className="recipe__detail">Ingredients</h3>
+          <div className="recipe__content_detail">
+            {recipe.ingredients && (
+              <ul>
+                {recipe.ingredients.split(", ").map((ingredient, index) => (
+                  <li key={index}>{ingredient}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+          <h3 className="recipe__detail">Directions</h3>
+          <div className="recipe__content_detail">
+          {recipe.directions && (
+              <ol>
+                {recipe.directions.split(". ").map((direction, index) => (
+                  <li key={index}>{direction}</li>
+                ))}
+              </ol>
+            )}</div>
           {recipe.notes !== null ? (
             <>
-              <h3>Notes</h3>
+              <h3 className="recipe__detail">Notes</h3>
               <div className="recipe__content_detail">{recipe.notes} </div>
             </>
           ) : (
             ""
           )}
-          <a className="recipe__content_detail" href={recipe.original_link}>
+          <a className="recipe__content_detail" href={recipe.original_link} target="blank">
             Recipe Source
           </a>
-          {recipe.can_edit ?
+          {recipe.can_edit ? (
             <section className="detail__action_buttons">
-            <img
-              className="action__button"
-              src="../gear.png"
-              onClick={() => navigate(`/recipes/${recipe.id}/edit`)}
-            ></img>
-            <img
-              className="action__button"
-              src="../trashcan.png"
-              onClick={() => {
-                handleDeleteRecipe(recipe.id);
-              }}
-            ></img>
-          </section> : ""
-            }
-
+              <img
+                className="action__button"
+                src="../gear.png"
+                onClick={() => navigate(`/recipes/${recipe.id}/edit`)}
+              ></img>
+              <img
+                className="action__button"
+                src="../trashcan.png"
+                onClick={() => {
+                  handleDeleteRecipe(recipe.id);
+                }}
+              ></img>
+            </section>
+          ) : (
+            ""
+          )}
         </section>
       </article>
     </>

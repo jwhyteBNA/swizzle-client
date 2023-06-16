@@ -33,7 +33,7 @@ export const MyRecipes = () => {
         recipes.map(recipe => {
             return <section key={`recipe--${recipe.id}`} className="recipe">
                 <section className="recipe__header">
-                    <div className="recipe__title" onClick={() => navigate(`/recipes/${recipe.id}`)}>{recipe.title}</div>
+                    <h3 className="recipe__title" onClick={() => navigate(`/recipes/${recipe.id}`)}>{recipe.name}</h3>
                     <div className="recipe__publication_date"> {recipe.publication_date}</div>
                 </section>
                 <img className="recipe__image" src={recipe.image_url} onClick={() => navigate(`/recipes/${recipe.id}`)}></img>
