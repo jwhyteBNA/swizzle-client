@@ -41,7 +41,7 @@ export const Register = ({setToken}) => {
 
       registerUser(newUser)
         .then(res => {
-          if ("valid" in res && res.valid) {
+          if ("token" in res && res.valid) {
             setToken(res.token)
             navigate("/")
           }
@@ -147,8 +147,6 @@ export const Register = ({setToken}) => {
         </div>
 
         <button className="login-btn" type="submit">Submit</button>
-
-
       </form>
     </section>
     </div>

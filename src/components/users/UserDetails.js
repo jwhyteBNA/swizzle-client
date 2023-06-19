@@ -4,49 +4,52 @@ import { getMixologist } from '../../managers/UserManager'
 import './user.css'
 
 export const UserDetail = () => {
-    const [user, setUser] = useState({})
-    const { userId } = useParams()
+
+    const [mixologist, setMixologist] = useState({})
+    const { mixologistId } = useParams()
+
+    const getSelectedMixologist = () => {
+        getMixologist(mixologistId)
+            .then((mixologistData) => {
+            setMixologist(mixologistData)
+        })
+    }
 
     useEffect(() => {
-        getMixologist(userId)
-            .then(setUser)
-    }, [userId])
+        getSelectedMixologist()
+    }, [mixologistId])
 
     return (
         <div className="userDetailContainer">
-            <h1>User Details</h1>
+            <h1>Mixologist Details</h1>
             <div className="userListRow">
                 <div>
                     <span className="property">Name:</span> 
-                    <span className="value">{user.user.first_name} {user.user.last_name}</span>
+                    <span className="value">{mixologist.user?.first_name} {mixologist?.user?.last_name}</span>
                 </div>
-                {user.profile_image && 
-                <div>
-                    <img src={user.profile_image} alt="User profile"/>
-                </div>}
                 <div>
                     <span className="property">Username:</span> 
-                    <span className="value">{user.user.username}</span>
+                    <span className="value">{mixologist.user?.username}</span>
                 </div>
                 <div>
                     <span className="property">Creation Date:</span> 
-                    <span className="value">{new Date(user?.created_on).toLocaleDateString()}</span>
+                    <span className="value">{mixologist.created_on}</span>
                 </div>
                 <div>
                     <span className="property">Bio:</span> 
-                    <span className="value">{user?.bio}</span>
+                    <span className="value">{mixologist.bio}</span>
                 </div>
-                {/* <div className="rareUser_subscribed">
+                {/* <div className="mixologist_subscribed">
               {
-  rareUser.subscribed ?
+  mixologist.subscribed ?
   <button
   className="btn-3" onClick={(e) => {
-    unsubscribeFromThisUser(e, rareUser.id)
+    unsubscribeFromThisUser(e, mixologist.id)
   }}>Unsubscribe</button>
   :
   <button
   className="btn-2" onClick={(e) => {
-    subscribeToThisUser(e, rareUser.id)
+    subscribeToThisUser(e, mixologist.id)
   }}>Subscribe</button>
 }
 

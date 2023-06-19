@@ -18,11 +18,9 @@ export const NavBar = ({ token, setToken }) => {
             </Link>
             <Link to="/recipes/myrecipes" className="navbar__item"> My Recipes
             </Link>
-            <Link to="/categorymanager" className="navbar__item"> Category Manager
+            <Link to="/recipes/favorites" className="navbar__item"> Favorites
             </Link>
-            <Link to="/tagmanager" className="navbar__item">Tag Manager
-            </Link>
-            <Link to="/mixologists" className="navbar__item">Mixologists
+            <Link to="/mixologists" className="navbar__item">Swizzle
             </Link>
             <Link to="/login"
                 className="navbar__item"

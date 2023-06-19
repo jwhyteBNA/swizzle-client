@@ -14,7 +14,8 @@ export const MyRecipes = () => {
     }, [])
 
     const handleDeleteRecipe = (recipeId) => {
-        if(window.confirm("Are you sure you want to delete this post?")) {
+        const confirmed = window.confirm("Are you sure you want to delete this recipe?");
+        if (confirmed) {
             deleteRecipe(recipeId)
             .then(() => {
                 getMyRecipes().then((myRecipeData) => setRecipes(myRecipeData))
@@ -24,7 +25,7 @@ export const MyRecipes = () => {
 
     return <>
         <article className="add__home_recipes">
-        <button className="add__recipes_button" onClick={() => {
+        <button className="button_save" onClick={() => {
             navigate({ pathname: "/recipes/publish" })
             }}>Add 🧉</button>
     </article>

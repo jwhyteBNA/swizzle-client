@@ -201,6 +201,7 @@ login-container{
 .textarea {
     background-color: transparent;
     border: none;
+	color: #f6a98d;
 }
 
 .login-btn {

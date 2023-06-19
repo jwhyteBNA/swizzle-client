@@ -194,6 +194,10 @@
     margin-right: auto;
 }
 
+.grid_of_recipes {
+    margin-bottom: 20px;
+}
+
 .grid__header {
     width: 200px;
     text-align: center;
@@ -319,16 +323,25 @@
     border-radius: 5px;
 }
 
-.btn-save {
-    width: 75px;
-    height: 35px;
-    color: white;
-    text-align: center;
-    background-color: #48C88C;
-    border: none;
-    border-radius: 3px;
-    align-self: center;
-}
+.button_save {
+	background-color: #f6a98d;
+	color: #000000;
+	line-height: 40px;
+	padding: 0;
+	margin: 1rem 1rem 1rem 0;
+	padding: 0.4rem;
+	font-size: 1.2rem;
+	border-radius: 0.5rem;
+	border: 2px solid;
+	box-shadow: 0 7px #999;
+  }
+  
+  .button_save:active {
+	background-color: #6ECF45;
+	color: #ffffff;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+  }
 
 .action__buttons_container {
     display: flex;

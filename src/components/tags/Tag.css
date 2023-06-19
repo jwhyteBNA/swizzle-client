@@ -8,7 +8,18 @@
     flex-wrap: nowrap;
     padding: 0px 50px;
     align-items: flex-start;
+    margin: 20px 0;
 }  
+
+.form {
+    display: flex;
+    align-items: center;
+}
+
+.form-control {
+    border: none;
+    width: 300px;
+}
 
 .tagList {
     width: 45%;
@@ -43,3 +54,40 @@
     height: 20px;
     cursor: pointer;
 }
+
+.button_save {
+    display: flex;
+    align-self: center;
+    border-radius: 0.5rem;
+	border: 2px solid;
+	font-family: 'Limelight', cursive;
+	font-size: inherit;
+	color: #000000;
+	background-color: #f6a98d;
+	cursor: pointer;
+	padding: 25px 80px;
+	display: inline-block;
+	margin: 1rem 1rem 1rem 0;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+	line-height: 40px;
+	padding: 0.4rem;
+	box-shadow: 0 7px #999;
+  }
+
+  .button_save:hover {
+	background: #3DD8FC;
+}
+  
+  .button_save:active {
+	background-color: #6ECF45;
+	color: #ffffff;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+  }

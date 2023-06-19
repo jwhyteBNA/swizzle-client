@@ -48,7 +48,8 @@ export const CommentList = () => {
     }
 
     const handleDeleteComment = (commentId) => {
-        if(window.confirm("Are you sure you want to delete this comment?")) {
+        const confirmed = window.confirm("Are you sure you want to delete this comment?");
+        if (confirmed) {
             deleteComment(commentId)
             .then(() => {
                 getFilteredComments()

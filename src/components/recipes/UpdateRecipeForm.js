@@ -13,6 +13,7 @@ export const UpdateRecipeForm = () => {
         name: "",
         image_url: "",
         original_link: "",
+        publication_date: "",
         ingredients: "",
         directions: "",
         notes: "",
@@ -201,7 +202,7 @@ export const UpdateRecipeForm = () => {
                         </div>
             </div>
         </fieldset>
-        <button className="btn btn-save"
+        <button className="button_save"
         onClick={evt => {
             evt.preventDefault()
             

@@ -15,6 +15,13 @@ export const MixologistList = () => {
     }, [])
 
     return (
+        <section>
+            <div className="detail_mgmt">
+            <Link to="/tagmanager" className="navbar__item"> Tag Manager
+            </Link>
+            <Link to="/categorymanager" className="navbar__item"> Category Manager
+            </Link>
+            </div>
         <div className="userListContainer">
             <h1>Mixologists</h1>
             {users.map(user => (
@@ -28,5 +35,6 @@ export const MixologistList = () => {
                 </div>
             ))}
         </div>
+        </section>
     )
 }
