@@ -11,6 +11,7 @@ import { RecipeList } from "../components/recipes/RecipeList"
 import { CommentList } from "../components/comments/CommentList"
 import { MixologistList } from "../components/users/UserList"
 import { UserDetail } from "../components/users/UserDetails"
+import { MyFavorites } from "../components/recipes/Favorites"
 
 
 export const ApplicationViews = ({ token }) => {
@@ -25,9 +26,10 @@ export const ApplicationViews = ({ token }) => {
                 <Route path="/recipes/myrecipes" element={<MyRecipes />} />
                 <Route path="/recipes/:recipeId/comments" element={ <CommentList /> } />
                 <Route path="/tagmanager" element={<TagList/>}/>
+                <Route path="/recipes/favorites" element={<MyFavorites/>}/>
                 <Route path="/categorymanager" element={<CategoryList/>}/>
-                <Route path="/Mixologists" element={<MixologistList />} />
-                <Route path="/Mixologists/:MixologistId" element={<UserDetail />} />
+                <Route path="/mixologists" element={<MixologistList />} />
+                <Route path="/mixologists/:mixologistId" element={<UserDetail />} />
             </Route>
         </Routes>
     </>

@@ -22,34 +22,22 @@ code {
     monospace;
 }
 
-.fakeLink {
-    color: -webkit-link;
-    cursor: pointer;
-    text-decoration: underline;
-    background: none!important;
-    border: none;
-    cursor: pointer;
-}
-
-.fakeLink:hover {
-    font-weight: bold;
-}
-
 .nav-item {
     list-style-type: none;
 }
 
 /* General button style */
 .btn {
-	border: none;
+	border-radius: 0.5rem;
+	border: 2px solid;
 	font-family: 'Limelight', cursive;
 	font-size: inherit;
-	color: inherit;
-	background: none;
+	color: #000000;
+	background-color: #f6a98d;
 	cursor: pointer;
 	padding: 25px 80px;
 	display: inline-block;
-	margin: 15px 30px;
+	margin: 1rem 1rem 1rem 0;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-weight: 700;
@@ -167,12 +155,13 @@ code {
 
 /* Button 3 */
 .btn-4 {
-	background: #34495e;
-	color: #fff;
+	background: #f6a98d;;
+	color: #000000;
 }
 
 .btn-4:hover {
-	background: #2c3e50;
+	background: #6ECF45;
+	color: #ffffff;
 }
 
 .btn-4:active {

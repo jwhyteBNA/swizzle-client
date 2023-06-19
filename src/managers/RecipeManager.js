@@ -101,3 +101,32 @@ export const getSubscriptions = () => {
     })
         .then(response => response.json())
 }
+
+export const deleteRecipeAsFave = (recipeId) => {
+    return fetch(`http://localhost:8000/recipes/${recipeId}/unfavorite`, {
+      method: "DELETE",
+      headers: {
+        "Authorization": `Token ${localStorage.getItem("auth_token")}`,
+      },
+    });
+  };
+  
+  export const markRecipeAsFave = (recipeId) => {
+    return fetch(`http://localhost:8000/recipes/${recipeId}/favorite`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Token ${localStorage.getItem("auth_token")}`,
+      },
+      body: JSON.stringify(recipeId),
+    }).then((res) => res.json());
+  };
+
+  export const getMyFavorites = () => {
+    return fetch("http://localhost:8000/recipes?is_favorite=True", {
+        headers:{
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+        }
+    })
+        .then(response => response.json())
+}

@@ -36,6 +36,15 @@ export const AllRecipes = () => {
     });
   }, []);
 
+  const getAllRecipes = () => {
+    getRecipes().then((recipeData) => {
+      const sortedData = recipeData.sort((a, b) =>
+        a.name.localeCompare(b.name)
+      );
+      setRecipes(sortedData);
+    });
+  }
+
   useEffect(() => {
     getCategories().then((categoryArray) => {
       setCategories(categoryArray);
@@ -86,13 +95,46 @@ export const AllRecipes = () => {
     }
   }, [filterBySearch]);
 
+  const handleMixologistChange = (evt) => {
+    const selectedValue = evt.target.value;
+    if (selectedValue === "") {
+      getAllRecipes()
+      setFilterByMixologist("")
+    } 
+    else {
+      setFilterByMixologist(selectedValue);
+    }
+  };
+
+  const handleCategoryChange = (evt) => {
+    const selectedValue = evt.target.value;
+    if (selectedValue === "") {
+      getAllRecipes()
+      setFilterByCategory("")
+    } 
+    else {
+      setFilterByCategory(selectedValue);
+    }
+  };
+
+  const handleTagChange = (evt) => {
+    const selectedValue = evt.target.value;
+    if (selectedValue === "") {
+      getAllRecipes()
+      setFilterByTag("")
+    } 
+    else {
+      setFilterByTag(selectedValue);
+    }
+  };
+
   return (
     <>
     <div className="select_filters">
     <section>
         <select
           value={filterByMixologist}
-          onChange={(evt) => setFilterByMixologist(evt.target.value)}
+          onChange={handleMixologistChange}
         >
           <option value="">Select Mixologist</option>
           {mixologists.map((mixologist) => (
@@ -105,7 +147,7 @@ export const AllRecipes = () => {
       <section>
         <select
           value={filterByCategory}
-          onChange={(evt) => setFilterByCategory(evt.target.value)}
+          onChange={handleCategoryChange}
         >
           <option value="">Select Category</option>
           {categories.map((category) => (
@@ -118,7 +160,7 @@ export const AllRecipes = () => {
       <section>
         <select
           value={filterByTag}
-          onChange={(evt) => setFilterByTag(evt.target.value)}
+          onChange={handleTagChange}
         >
           <option value="">Tag Select</option>
           {tags.map((tag) => (
@@ -141,7 +183,7 @@ export const AllRecipes = () => {
       </section>
       <article className="add__recipes">
         <button
-          className="add__recipes_button"
+          className="button_save"
           onClick={() => {
             navigate({ pathname: "/recipes/publish" });
           }}
@@ -149,6 +191,7 @@ export const AllRecipes = () => {
           Add 🧉
         </button>
       </article>
+      <section className="grid_of_recipes">
       <section className="recipes__grid">
         <div className="grid__header">Name</div>
         <div className="grid__header">Added By</div>
@@ -172,8 +215,10 @@ export const AllRecipes = () => {
                 {recipe.tag?.map((tag) => tag.label).join(", ")}
               </div>
             </section>
+            
         );
       })}
+      </section>
     </>
   );
 };

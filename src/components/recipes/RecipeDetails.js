@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./Recipes.css";
-import { deleteRecipe, getExactRecipe } from "../../managers/RecipeManager";
+import { deleteRecipe, deleteRecipeAsFave, getExactRecipe, markRecipeAsFave } from "../../managers/RecipeManager";
 
 export const RecipeDetails = () => {
   const [recipe, setExactRecipe] = useState({});
@@ -15,12 +15,34 @@ export const RecipeDetails = () => {
   }, [recipeId]);
 
   const handleDeleteRecipe = (recipeId) => {
-    if (window.confirm("Are you sure you want to delete this recipe?")) {
+    const confirmed = window.confirm("Are you sure you want to delete this recipe?");
+        if (confirmed) {
       deleteRecipe(recipeId).then(() => {
         navigate("/recipes");
       });
     }
   };
+
+  const deleteFavoriteRecipe = (e, recipeId) => {
+    e.preventDefault();
+    const confirmed = window.confirm("Are you sure you want to remove this favorite recipe?");
+        if (confirmed) {
+    deleteRecipeAsFave(recipeId).then(() => 
+    getExactRecipe(recipeId).then((recipeData) => {
+      setExactRecipe(recipeData);
+    })
+    )
+      };
+  };
+
+  const favoriteThisRecipe = (e, recipeId) => {
+    e.preventDefault();
+    markRecipeAsFave(recipeId).then(() => 
+    getExactRecipe(recipeId).then((recipeData) => {
+      setExactRecipe(recipeData);
+    })
+    )
+  }
 
   return (
     <>
@@ -47,7 +69,7 @@ export const RecipeDetails = () => {
               </div>
             </div>
             <button
-              className="comment__button"
+              className="button_save"
               onClick={() => navigate(`/recipes/${recipe.id}/comments`)}
             >
               View Comments
@@ -84,6 +106,27 @@ export const RecipeDetails = () => {
           <a className="recipe__content_detail" href={recipe.original_link} target="blank">
             Recipe Source
           </a>
+          <div className="recipe_favorite">
+                {recipe.is_favorite ? (
+                  <button
+                    className="btn-3"
+                    onClick={(e) => {
+                      deleteFavoriteRecipe(e, recipe.id);
+                    }}
+                  >
+                    Unfavorite
+                  </button>
+                ) : (
+                  <button
+                    className="btn-2"
+                    onClick={(e) => {
+                      favoriteThisRecipe(e, recipe.id);
+                    }}
+                  >
+                    Favorite
+                  </button>
+                )}
+          </div>
           {recipe.can_edit ? (
             <section className="detail__action_buttons">
               <img
@@ -106,4 +149,4 @@ export const RecipeDetails = () => {
       </article>
     </>
   );
-};
+}

@@ -14,8 +14,8 @@ export const getMixologists = () => {
   }).then((res) => res.json());
 };
 
-export const getMixologist = (userId) => {
-  return fetch(`http://localhost:8000/mixologists/${userId}`, {
+export const getMixologist = (mixologistId) => {
+  return fetch(`http://localhost:8000/mixologists/${mixologistId}`, {
     headers: {
       Authorization: `Token ${localStorage.getItem("auth_token")}`,
     },
@@ -27,7 +27,7 @@ export const subscribeToMixologist = (mixologistId) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Token ${localStorage.getItem("lu_token")}`,
+      Authorization: `Token ${localStorage.getItem("auth_token")}`,
     },
     body: JSON.stringify(mixologistId),
   }).then((res) => res.json());
@@ -40,7 +40,7 @@ export const unsubscribeToMixologist = (mixologistId) => {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Token ${localStorage.getItem("lu_token")}`,
+        Authorization: `Token ${localStorage.getItem("auth_token")}`,
       },
       body: JSON.stringify(mixologistId),
     }
@@ -52,7 +52,7 @@ export const resubscribeToUser = (mixologistId) => {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Token ${localStorage.getItem("lu_token")}`,
+      Authorization: `Token ${localStorage.getItem("auth_token")}`,
     },
     body: JSON.stringify(mixologistId),
   }).then((res) => res.json());

@@ -4,11 +4,13 @@
         "Mocktail",
         "myposts",
         "Salud",
+        "searchbox",
         "Whyte"
     ],
     "cSpell.ignoreWords": [
         "categorymanager",
         "catform",
+        "mgmt",
         "myrecipes",
         "setis"
     ]

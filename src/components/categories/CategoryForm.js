@@ -34,7 +34,7 @@ export const CategoryForm = ({getAllCategories}) => {
       <fieldset>
         <div className="category">
           <label htmlFor="name">Name: </label>
-          <input type="textarea" name="label" required className="catform-control"
+          <textarea name="label" required className="catform-control"
             placeholder="Enter a new category label here"
             onChange={handleInputChange}
           />
@@ -43,7 +43,9 @@ export const CategoryForm = ({getAllCategories}) => {
       <fieldset>
         <div className="category">
           <label htmlFor="name">Description: </label>
-          <input type="textarea" name="label" required className="catform-control"
+          <textarea name="label" required className="catform-control"
+          rows="2"
+          cols="auto"
             placeholder="Explain the category"
             onChange={handleInputChange}
           />
@@ -54,7 +56,7 @@ export const CategoryForm = ({getAllCategories}) => {
           evt.preventDefault()
           createANewCategory()
         }}
-        className="btn btn-4">
+        className="button_save btn">
         Save New Category
       </button>
     </form>

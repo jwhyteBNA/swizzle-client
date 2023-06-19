@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { createTag } from "../../managers/TagManager"
-import './Tag.css'
+import './tag.css'
 
 
 export const TagForm = ({getAllTags}) => {
@@ -40,7 +40,7 @@ export const TagForm = ({getAllTags}) => {
           evt.preventDefault()
           createANewTag()
         }}
-        className="btn btn-4">
+        className="button_save">
         Save New Tag
       </button>
     </form>
