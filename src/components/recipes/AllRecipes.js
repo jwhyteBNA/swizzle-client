@@ -43,7 +43,7 @@ export const AllRecipes = () => {
       );
       setRecipes(sortedData);
     });
-  }
+  };
 
   useEffect(() => {
     getCategories().then((categoryArray) => {
@@ -98,10 +98,9 @@ export const AllRecipes = () => {
   const handleMixologistChange = (evt) => {
     const selectedValue = evt.target.value;
     if (selectedValue === "") {
-      getAllRecipes()
-      setFilterByMixologist("")
-    } 
-    else {
+      getAllRecipes();
+      setFilterByMixologist("");
+    } else {
       setFilterByMixologist(selectedValue);
     }
   };
@@ -109,10 +108,9 @@ export const AllRecipes = () => {
   const handleCategoryChange = (evt) => {
     const selectedValue = evt.target.value;
     if (selectedValue === "") {
-      getAllRecipes()
-      setFilterByCategory("")
-    } 
-    else {
+      getAllRecipes();
+      setFilterByCategory("");
+    } else {
       setFilterByCategory(selectedValue);
     }
   };
@@ -120,56 +118,52 @@ export const AllRecipes = () => {
   const handleTagChange = (evt) => {
     const selectedValue = evt.target.value;
     if (selectedValue === "") {
-      getAllRecipes()
-      setFilterByTag("")
-    } 
-    else {
+      getAllRecipes();
+      setFilterByTag("");
+    } else {
       setFilterByTag(selectedValue);
     }
   };
 
   return (
     <>
-    <div className="select_filters">
-    <section>
-        <select
-          value={filterByMixologist}
-          onChange={handleMixologistChange}
-        >
-          <option value="">Select Mixologist</option>
-          {mixologists.map((mixologist) => (
-            <option key={`mixologist--${mixologist.id}`} value={mixologist.id}>
-              {mixologist.user.username}
-            </option>
-          ))}
-        </select>
-      </section>
-      <section>
-        <select
-          value={filterByCategory}
-          onChange={handleCategoryChange}
-        >
-          <option value="">Select Category</option>
-          {categories.map((category) => (
-            <option key={`category--${category.id}`} value={category.id}>
-              {category.name}
-            </option>
-          ))}
-        </select>
-      </section>
-      <section>
-        <select
-          value={filterByTag}
-          onChange={handleTagChange}
-        >
-          <option value="">Tag Select</option>
-          {tags.map((tag) => (
-            <option key={`tag--${tag.id}`} value={tag.id}>
-              {tag.label}
-            </option>
-          ))}
-        </select>
-      </section>
+      <div className="select_filters">
+        <section>
+          <select value={filterByMixologist} onChange={handleMixologistChange}>
+            <option value="">Select Mixologist</option>
+            {mixologists
+              .sort((a, b) => a.user.username.localeCompare(b.user.username))
+              .map((mixologist) => (
+                <option
+                  key={`mixologist--${mixologist.id}`}
+                  value={mixologist.id}
+                >
+                  {mixologist.user.username}
+                </option>
+              ))}
+          </select>
+        </section>
+        <section>
+          <select value={filterByCategory} onChange={handleCategoryChange}>
+            <option value="">Select Category</option>
+            {categories.map((category) => (
+              <option key={`category--${category.id}`} value={category.id}>
+                {category.name}
+              </option>
+            ))}
+          </select>
+        </section>
+        <section>
+          <select value={filterByTag} onChange={handleTagChange}>
+            <option value="">Tag Select</option>
+            {tags
+            .sort((a, b) => a.label.localeCompare(b.label)).map((tag) => (
+              <option key={`tag--${tag.id}`} value={tag.id}>
+                {tag.label}
+              </option>
+            ))}
+          </select>
+        </section>
       </div>
       <section className="search_filter">
         <input
@@ -192,14 +186,14 @@ export const AllRecipes = () => {
         </button>
       </article>
       <section className="grid_of_recipes">
-      <section className="recipes__grid">
-        <div className="grid__header">Name</div>
-        <div className="grid__header">Added By</div>
-        <div className="grid__header">Category</div>
-        <div className="grid__header">Tags</div>
-      </section>
-      {recipes.map((recipe) => {
-        return (
+        <section className="recipes__grid">
+          <div className="grid__header">Name</div>
+          <div className="grid__header">Added By</div>
+          <div className="grid__header">Category</div>
+          <div className="grid__header">Tags</div>
+        </section>
+        {recipes.map((recipe) => {
+          return (
             <section className="grid__items" key={`recipe--${recipe.id}`}>
               <Link className="recipe__titles" to={`/recipes/${recipe.id}`}>
                 {recipe.name}
@@ -215,9 +209,8 @@ export const AllRecipes = () => {
                 {recipe.tag?.map((tag) => tag.label).join(", ")}
               </div>
             </section>
-            
-        );
-      })}
+          );
+        })}
       </section>
     </>
   );

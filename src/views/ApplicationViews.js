@@ -12,6 +12,7 @@ import { CommentList } from "../components/comments/CommentList"
 import { MixologistList } from "../components/users/UserList"
 import { UserDetail } from "../components/users/UserDetails"
 import { MyFavorites } from "../components/recipes/Favorites"
+import { MySubscriptions } from "../components/recipes/MySubscriptions"
 
 
 export const ApplicationViews = ({ token }) => {
@@ -24,6 +25,7 @@ export const ApplicationViews = ({ token }) => {
                 <Route path="/recipes/:recipeId" element={<RecipeDetails />} />
                 <Route path="/recipes/:recipeId/edit" element={ <UpdateRecipeForm /> } />
                 <Route path="/recipes/myrecipes" element={<MyRecipes />} />
+                <Route path="/recipes/mysubscriptions" element={<MySubscriptions />} />
                 <Route path="/recipes/:recipeId/comments" element={ <CommentList /> } />
                 <Route path="/tagmanager" element={<TagList/>}/>
                 <Route path="/recipes/favorites" element={<MyFavorites/>}/>

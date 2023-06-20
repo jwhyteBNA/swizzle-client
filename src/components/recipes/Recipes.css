@@ -12,6 +12,10 @@
     margin-bottom: 30px;
 }
 
+.recipes_favorites {
+    margin-bottom: 30px;
+}
+
 .select_filters {
     margin-top: 25px;
     display: flex;
@@ -108,7 +112,7 @@
     font-style: italic;
 }
 
-.recipe__author_detail {
+.recipe__mixologist_detail {
     font-size: 14px;
     cursor: pointer;
 }
@@ -216,7 +220,7 @@
 .recipe__titles {
     display: block;
     text-align: left;
-    width: 200px;
+    width: 250px;
     padding: 10px;
     border-right: 1px solid black;
     cursor: pointer;
@@ -226,28 +230,20 @@
     margin: 15px 0px 7px 0px;
 }
 
-.recipe__authors {
+.recipe__mixologists {
     display: block;
     text-align: center;
     font-style: italic;
-    width: 200px;
+    width: 250px;
     padding: 10px;
     border-right: 1px solid black;
     cursor: pointer;
 }
 
-.recipe__dates {
-    display: block;
-    text-align: center;
-    width: 200px;
-    padding: 10px;
-    border-right: 1px solid black;
-}
-
 .recipe__categories {
     display: block;
     text-align: center;
-    width: 200px;
+    width: 250px;
     padding: 10px;
     border-right: 1px solid black;
 }
@@ -255,7 +251,7 @@
 .recipe__tags {
     display: block;
     text-align: center;
-    width: 200px;
+    width: 250px;
     padding: 10px;
 }
 
@@ -282,18 +278,16 @@
     flex-direction: column;
 }
 
-.form-control-title {
+.form-control-name {
     width: 500px;
     height: 35px;
     margin-bottom: 5px;
-
 }
 
 .form-control-image {
     width: 500px;
     height: 35px;
     margin-bottom: 25px;
-
 }
 
 .form-control-content {
@@ -360,8 +354,16 @@
     height: auto;
 }
 
-.label.checkbox {
+.tags_group {
     display: flex;
-    flex-flow:row-reverse;
+    flex-wrap: wrap;
 }
 
+.checkbox {
+    flex-basis: 50%;
+    box-sizing: border-box;
+}
+
+label {
+    margin: 5px;
+}
