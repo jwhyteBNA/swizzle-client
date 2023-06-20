@@ -110,6 +110,7 @@ export const UpdateRecipeForm = () => {
             <div className="form-group">
                 <label htmlFor="original_link">Original Recipe Link:</label>
                 <input
+                    row="2"
                     name="original_link"
                     required autoFocus
                     type="text"
@@ -184,10 +185,11 @@ export const UpdateRecipeForm = () => {
         </fieldset>
         <fieldset>
             <div className="form-group">
-            <label htmlFor="tag">Tags:</label>
-                    <div className="input__field">
-                            {tags.map((tag) => (
-                                <label key={tag.id} className="checkbox">
+            <label className="label_tag" htmlFor="tag">Tags:</label>
+                    <div className="tags_group">
+                            {tags.sort((a, b) => a.label.localeCompare(b.label)).map((tag) => (
+                                <div className="checkbox">
+                                <label key={tag.id}>
                                     <input
                                         type="checkbox"
                                         name="tag"
@@ -198,6 +200,7 @@ export const UpdateRecipeForm = () => {
                                         onChange={handleCheckbox}/>
                                         {tag.label}
                                 </label>
+                                </div>
                                 ))}
                         </div>
             </div>

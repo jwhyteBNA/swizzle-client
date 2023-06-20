@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 }
 .login-main {
-	background: rgb(45, 43, 43) no-repeat center center fixed !important;
+	background: rgb(0, 0, 0) no-repeat center center fixed !important;
 	background-size: cover;
 	height: 100vh;
 	font-family: 'Limelight', cursive;
@@ -25,7 +25,8 @@ login-container{
 .login-container{
     width: 100vw;
     height: 100vh;
-    display: grid;
+    display: flex;
+	justify-content: space-evenly;
     grid-template-columns: repeat(2, 1fr);
     grid-gap :7rem;
     padding: 0 2rem;
@@ -43,6 +44,12 @@ login-container{
 
 .login-form{
 	width: 360px;
+	align-self: center;
+}
+
+.login-content {
+	display: flex;
+	align-items: center;
 }
 
 .login-content img{

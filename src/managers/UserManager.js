@@ -30,10 +30,10 @@ export const subscribeToMixologist = (mixologistId) => {
       Authorization: `Token ${localStorage.getItem("auth_token")}`,
     },
     body: JSON.stringify(mixologistId),
-  }).then((res) => res.json());
+  })
 };
 
-export const unsubscribeToMixologist = (mixologistId) => {
+export const unsubscribeFromMixologist = (mixologistId) => {
   return fetch(
     `http://localhost:8000/mixologists/${mixologistId}/unsubscribe`,
     {
@@ -43,11 +43,10 @@ export const unsubscribeToMixologist = (mixologistId) => {
         Authorization: `Token ${localStorage.getItem("auth_token")}`,
       },
       body: JSON.stringify(mixologistId),
-    }
-  ).then((res) => res.json());
+    })
 };
 
-export const resubscribeToUser = (mixologistId) => {
+export const resubscribeToMixologist = (mixologistId) => {
   return fetch(`http://localhost:8000/mixologists/${mixologistId}/subscribe`, {
     method: "PUT",
     headers: {
@@ -55,5 +54,5 @@ export const resubscribeToUser = (mixologistId) => {
       Authorization: `Token ${localStorage.getItem("auth_token")}`,
     },
     body: JSON.stringify(mixologistId),
-  }).then((res) => res.json());
+  })
 };

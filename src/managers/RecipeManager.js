@@ -57,6 +57,15 @@ export const getMyRecipes = () => {
         .then(response => response.json())
 }
 
+export const getMySubscriptions = () => {
+    return fetch("http://localhost:8000/recipes/mysubscriptions", {
+        headers:{
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+        }
+    })
+        .then(response => response.json())
+}
+
 export const filterRecipesByMixologist = (mixologistId) => {
     return fetch(`http://localhost:8000/recipes?mixologist=${mixologistId}`, {
         headers:{

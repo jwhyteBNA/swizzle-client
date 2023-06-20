@@ -14,6 +14,8 @@ export const NavBar = ({ token, setToken }) => {
       
         {token ? (
           <>
+            <Link to="/recipes/mysubscriptions" className="navbar__item"> My Subscriptions
+            </Link>
             <Link to="/recipes" className="navbar__item"> All Recipes
             </Link>
             <Link to="/recipes/myrecipes" className="navbar__item"> My Recipes

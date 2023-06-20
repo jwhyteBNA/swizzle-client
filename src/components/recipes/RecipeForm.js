@@ -87,7 +87,7 @@ export const RecipeForm = () => {
                             <input
                                 required autoFocus
                                 type="text"
-                                className="form-control-title"
+                                className="form-control-name"
                                 placeholder="Name"
                                 value={recipe.name}
                                 onChange={
@@ -232,9 +232,11 @@ export const RecipeForm = () => {
                 </fieldset>
                 <fieldset>
                     <div className="form-group">
-                        <div className="tag__field">
-                                {tags.map((tag) => (
-                                    <label key={tag.id} className="checkbox">
+                    <label className="label_tag" htmlFor="tag">Tags:</label>
+                        <div className="tags_group">
+                                {tags.sort((a, b) => a.label.localeCompare(b.label)).map((tag) => (
+                                    <div className="checkbox">
+                                    <label key={tag.id}>
                                         <input
                                             type="checkbox"
                                             name="tag"
@@ -244,6 +246,7 @@ export const RecipeForm = () => {
                                             />
                                             {tag.label}
                                     </label>
+                                    </div>
                                     ))}
                             </div>
                         </div>

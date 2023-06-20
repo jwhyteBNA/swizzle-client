@@ -36,7 +36,7 @@ export const MyFavorites = () => {
 
   return (
     <>
-      <article className="recipes">
+      <article className="recipes_favorites">
         {recipes.map((recipe) => {
           return (
             <section key={`recipe--${recipe.id}`} className="recipe">
