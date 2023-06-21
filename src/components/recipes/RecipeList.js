@@ -74,12 +74,12 @@ export const RecipeList = () => {
           return (
             <section key={`recipe--${recipe.id}`} className="recipe">
               <section className="recipe__header">
-                <div
+                <h2
                   className="recipe__name"
                   onClick={() => navigate(`/recipes/${recipe.id}`)}
                 >
                   {recipe.name}
-                </div>
+                </h2>
                 <div className="recipe__publication_date">
                   {" "}
                   {recipe.publication_date}

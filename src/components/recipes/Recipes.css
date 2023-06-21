@@ -105,9 +105,36 @@
     height: auto;
 }
 
+.details{
+    display: flex;
+}
+
+.all_ratings {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.user_rating {
+    text-align: right;
+}
+
+.average_rating {
+    text-align: left;
+}
+
 .recipe__category_detail {
     text-align: right;
     margin-bottom: 5px;
+    width: 400px;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.recipe__tag_detail {
+    text-align: left;
+    margin-bottom: 5px;
+    width: 400px;
     font-size: 12px;
     font-style: italic;
 }
