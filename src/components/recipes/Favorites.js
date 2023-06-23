@@ -37,6 +37,7 @@ export const MyFavorites = () => {
 
   return (
     <>
+    <h1 className="intro">My Favorite Recipes</h1>
       <article className="recipes_favorites">
         {recipes.map((recipe) => {
           return (

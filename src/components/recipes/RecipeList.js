@@ -8,6 +8,7 @@ import {
   markRecipeAsFave,
 } from "../../managers/RecipeManager";
 import { FaStar, FaRegStar, FaTrashAlt, FaRegEdit } from "react-icons/fa";
+import { Intro } from "./Explainer";
 
 export const RecipeList = () => {
   const [recipes, setRecipes] = useState([]);
@@ -60,6 +61,7 @@ export const RecipeList = () => {
 
   return (
     <>
+      <Intro/>
       <article className="add__home_recipes">
         <button
           className="button_save"

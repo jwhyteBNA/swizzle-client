@@ -24,6 +24,7 @@ export const MySubscriptions = () => {
     }
 
     return <>
+    <h1 className="intro">Subscriptions</h1>
     <article className="recipes">
     {
         recipes.map(recipe => {
