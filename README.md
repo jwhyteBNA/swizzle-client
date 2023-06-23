@@ -8,17 +8,24 @@ Welcome to Swizzle and Salud, a social recipe application for discerning palates
 
 The list of cocktail websites is long, but finding non-alcoholic proxies can be tough, as alcohol’s more sober cousins often succumb to one of a few common pitfalls: when they aren’t a total sugar bomb, they are often hidden on other recipe sites and blogs alongside alcohol promotion, which can be triggering for those in recovery. Swizzle & Salud is a site dedicated to drink aficionados who want to explore all things mixology in one place. 
 
-The initial build of this application was completed in two weeks, using React and CSS for styling. My goals were to incorporate full CRUD functionality, engage many-to-many relationships, and 
+The initial build of this application was completed in two weeks, using React and CSS for styling. My goals were to incorporate full CRUD functionality, engage many-to-many relationships, and work wih conditionality to render different views.
 
 ### Features
 All Users
 * Search for recipes that approximate 21+ drinks based on an equivalent spirit, category (herbal, fruity, etc.), season, and ingredients.
 * Save favorite recipes
+* Rate recipes and see average user ratings.
+* Subscribe to mixologists to see a custom feed of those posts.
 * Comment and share photos of their creations
 * Add, update, and delete their own concoctions to share.
 
 Master Mixologist Admins
 * Have gatekeeper status of user content including recipes, comments, and photos. 
+
+#### ERD
+
+![ERD - Swizzle](./swizzle-client/src/images/ERDSwizzle.png)
+
 
 ### Server Side Code
 <a href="https://github.com/jwhyteBNA/Swizzle-Server" target="_blank"><img src="https://img.shields.io/badge/Click_here%20-%236ae689.svg?&style=for-the-badge&&logoColor=white" alt="Swizzle&Salud Server-side Repo" style="height: auto !important; width: auto !important;" /></a>
@@ -26,7 +33,7 @@ Master Mixologist Admins
 
 ### Technologies used
 
-![HTML5](https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![React](https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Git](https://img.shields.io/badge/git%20-%23F05033.svg?&style=for-the-badge&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white) ![JSON Server](https://img.shields.io/badge/JSON_Server%20-%232a2e2a.svg?&style=for-the-badge&logo=JSON&logoColor=white) ![Visual Studio Code](https://img.shields.io/badge/VSCode%20-%23007ACC.svg?&style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![Python3](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)![HTML5](https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![React](https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Git](https://img.shields.io/badge/git%20-%23F05033.svg?&style=for-the-badge&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white) ![JSON Server](https://img.shields.io/badge/JSON_Server%20-%232a2e2a.svg?&style=for-the-badge&logo=JSON&logoColor=white) ![Visual Studio Code](https://img.shields.io/badge/VSCode%20-%23007ACC.svg?&style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
 
 ### Created by Jessalynn Whyte
