@@ -24,7 +24,7 @@ Master Mixologist Admins
 
 #### ERD
 
-![ERD - Swizzle](./swizzle-client/src/images/ERDSwizzle.png)
+![ERD - Swizzle](./src/images/ERDSwizzle.png)
 
 
 ### Server Side Code
