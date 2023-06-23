@@ -15,7 +15,7 @@ export const MixologistList = () => {
     }, [])
 
     return (
-        <section>
+        <section className="user_list">
             <div className="detail_mgmt">
             <Link to="/tagmanager" className="navbar__item"> Tag Manager
             </Link>

@@ -1,8 +1,15 @@
+.comment_content {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  margin: 10px auto;
+}
+
 .comment_form {
     display: flex;
     align-items: center;
     flex-flow: column wrap;
-    margin: 20px;
+    margin: 20px auto;
     width: 400px;
     height: 250px;
     border: 2px solid  #6ECF45;
@@ -34,9 +41,29 @@
   }
 
 .comment_form_input {
-    margin: 5px;
+  margin: 5px;
+  width: 80%;
+  border: 1px solid #3DD8FC;
 }
 
 .action__button {
-    width: 40px;
+  width: 40px;
+}
+
+.comment-img {
+  display: flex;
+  width: 50%;
+  margin: 0px auto;
+  height: auto;
+}
+
+.comment-content {
+  margin: 10px 0;
+}
+
+.comment-details {
+  border: 1px solid #6ECF45;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin: 10px;
+  padding: 15px;
 }

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { TagForm } from "./TagForm";
 import { deleteTag, getTags, updateTag } from "../../managers/TagManager";
 import "./tag.css";
+import { FaTrashAlt, FaRegEdit } from "react-icons/fa";
 
 export const TagList = () => {
   const [tags, setTags] = useState([]);
@@ -80,17 +81,17 @@ export const TagList = () => {
         </form>
       ) : (
         <>
-          <span>{tag.label}</span>
-          <img
-            className="action__button"
-            src="gear.png"
+          <span className="span_tag_name">{tag.label}</span>
+          <span className="span_buttons">
+          <i
+            className="edit__icon"
             onClick={() => handleEditTag(tag.id)}
-          ></img>
-          <img
-            className="action__button"
-            src="trashcan.png"
+          ><FaRegEdit /></i>
+          <i
+            className="trash__icon"
             onClick={() => handleDeleteTag(tag.id)}
-          ></img>
+          ><FaTrashAlt/></i>
+          </span>
         </>
       )
     ) : 

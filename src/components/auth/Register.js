@@ -140,7 +140,7 @@ export const Register = ({setToken}) => {
                 </i>
               </div>
           <div className="control">
-            <textarea autoFocus
+            <textarea
             rows="2"
             cols="50"className="textarea" type="text" placeholder="Tell us about yourself..." ref={bio}></textarea>
           </div>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { CategoryForm } from "./CategoryForm";
 import "./category.css";
 import { deleteCategory, getCategories, updateCategory } from "../../managers/CategoryManager";
+import { FaTrashAlt, FaRegEdit } from "react-icons/fa";
 
 export const CategoryList = () => {
   const [categories, setCategories] = useState([]);
@@ -91,16 +92,14 @@ export const CategoryList = () => {
                   <span className= "span_name">{category.name}</span>
                   <span className= "span_description">{category.description}</span>
                   <span className= "span_buttons">
-                  <img
-                    className="action__button"
-                    src="gear.png"
+                  <i
+                    className="edit__icon"
                     onClick={() => handleEditCategory(category.id)}
-                  ></img>
-                  <img
-                    className="action__button"
-                    src="trashcan.png"
+                  ><FaRegEdit /></i>
+                  <i
+                    className="trash__icon"
                     onClick={() => handleDeleteCategory(category.id)}
-                  ></img>
+                  ><FaTrashAlt/></i>
                   </span>
                 </>
               )

@@ -16,20 +16,25 @@
     align-items: center;
 }
 
-.form-control {
-    border: none;
-    width: 300px;
+.formBorder {
+    padding: 15px;
+    border: 1px solid #6ECF45;
 }
+
+.tagform-control {
+    width: 90%;
+    margin-left: 5px;
+    display:flex;
+    flex-wrap: wrap;
+    border: none;
+}
+
+
 
 .tagList {
     width: 45%;
     border-collapse: collapse;
     max-width: 45%;
-}
-
-.formBorder{
-    padding: 15px;
-    border: 1px solid #000;
 }
 
 .tagForm {
@@ -40,8 +45,9 @@
 
 .tagRow {
     display: flex;
+    width: 50%;
     justify-content: space-between;
-    border: 1px solid #000;
+    border: 1px solid #6ECF45;
     padding: 5px;
 }
 

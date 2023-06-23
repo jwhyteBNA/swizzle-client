@@ -4,17 +4,29 @@
 --------------------------------------------------------------*/
 
 body, button, input, select, textarea {
-    color: #404040;
+    color: #3DD8FC;
     font-family: 'Montserrat Alternates', sans-serif;
     font-size: 1rem;
     line-height: 1.5;
     padding: 0;
     margin: 0;
+	background: #1b1b1b;
 }
 
+body, select {
+/* background-color: #1b1b1b; */
+background: #1b1b1b;
+}
+
+
 h1, h2, h3, h4, h5, h6 {
+	color: #6ECF45;
     font-family: 'Limelight', cursive;
     letter-spacing: 2px;
+}
+
+a {
+	color:#f6a98d;
 }
 
 code {
@@ -153,7 +165,7 @@ code {
 	width: 60px;
 }
 
-/* Button 3 */
+/* Button 4 */
 .btn-4 {
 	background: #f6a98d;;
 	color: #000000;
@@ -181,6 +193,67 @@ code {
 
 /* Icons */
 
+/* Icon 1 */
+.unfave_icon {
+	color: #6ECF45;
+	outline: #fff;
+	height: 20px;
+	font-size: 40px;
+}
+
+.unfave_icon:hover {
+	color: #f69876;
+}
+
+.unfave_icon:active {
+	color: #ea346d;
+	top: 2px;
+}
+
+.unfave_icon:before {
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	line-height: 3;
+	font-size: 140%;
+	width: 60px;
+}
+
+/* Unfavorite Icon */
+.fave_icon {
+	color: #6ECF45;
+	outline: #fff;
+	font-size: 40px;
+}
+
+.fave_icon:hover {
+	color: #489627;
+}
+
+.fave_icon:active {
+	color: #77c755;
+	top: 2px;
+}
+
+.fave_icon:before {
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	line-height: 3;
+	font-size: 140%;
+	width: 60px;
+}
+
 .icon-send:before {
 	content: "🔓";
+}
+
+.trash__icon {
+	font-size: 35px;
+}
+
+.edit__icon {
+	font-size: 35px;
 }

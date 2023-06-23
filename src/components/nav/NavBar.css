@@ -17,7 +17,7 @@ nav {
 .navbar-menu {
 	display: flex;
 	justify-content: space-evenly;
-	background-image: linear-gradient(to top, #000000, #000000, #e41154);
+	background-image: linear-gradient(to top, #1b1b1b, #1b1b1b, #e41154);
 	color: var(--textColor);
 }
 

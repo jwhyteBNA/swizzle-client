@@ -200,7 +200,7 @@ export const AllRecipes = () => {
               </Link>
               <div
                 className="recipe__mixologists"
-                onClick={() => navigate(`/users/${recipe.mixologist.user.id}`)}
+                onClick={() => navigate(`/mixologists/${recipe.mixologist.user.id}`)}
               >
                 {recipe.mixologist.user.username}
               </div>

@@ -10,6 +10,7 @@ import {
   rateRecipe,
   updateRecipeRating,
 } from "../../managers/RecipeManager";
+import { FaStar, FaRegStar, FaTrashAlt, FaRegEdit } from "react-icons/fa";
 
 export const RecipeDetails = () => {
   const [recipe, setExactRecipe] = useState({});
@@ -117,7 +118,7 @@ export const RecipeDetails = () => {
           </div>
         )}
         </section>
-            <section className="details">
+            <section className="tag_cat_details">
             <div className="recipe__tag_detail">
             {recipe.tag?.sort((a, b) => a.label.localeCompare(b.label)).map((tag) => tag.label).join(", ")}
           </div>
@@ -136,7 +137,7 @@ export const RecipeDetails = () => {
               >
                 By: <b>{recipe.mixologist?.user?.username}</b>
               </div>
-              <div className="recipe__publication_date_detail">
+              <div className="">
                 Published: <i>{recipe.publication_date}</i>{" "}
               </div>
             </div>
@@ -146,7 +147,31 @@ export const RecipeDetails = () => {
             >
               View Comments
             </button>
+            <div>
             <div>Servings: {recipe.servings} </div>
+            <div className="recipe_favorite">
+        <div>Favorite?</div>
+            {recipe.is_favorite ? (
+              <i
+                className="unfave_icon"
+                onClick={(e) => {
+                  deleteFavoriteRecipe(e, recipe.id);
+                }}
+              >
+                <FaStar />
+              </i>
+            ) : (
+              <i
+                className="fave_icon"
+                onClick={(e) => {
+                  favoriteThisRecipe(e, recipe.id);
+                }}
+              >
+                <FaRegStar />
+              </i>
+            )}
+            </div>
+          </div>
           </section>
           <h3 className="recipe__detail">Ingredients</h3>
           <div className="recipe__content_detail">
@@ -177,47 +202,24 @@ export const RecipeDetails = () => {
             ""
           )}
           <a
-            className="recipe__content_detail"
+            className="recipe__content_link"
             href={recipe.original_link}
             target="blank"
           >
             Recipe Source
           </a>
-          <div className="recipe_favorite">
-            {recipe.is_favorite ? (
-              <button
-                className="btn-3"
-                onClick={(e) => {
-                  deleteFavoriteRecipe(e, recipe.id);
-                }}
-              >
-                Unfavorite
-              </button>
-            ) : (
-              <button
-                className="btn-2"
-                onClick={(e) => {
-                  favoriteThisRecipe(e, recipe.id);
-                }}
-              >
-                Favorite
-              </button>
-            )}
-          </div>
           {recipe.can_edit ? (
             <section className="detail__action_buttons">
-              <img
-                className="action__button"
-                src="../gear.png"
+              <i
+                className="edit__icon"
                 onClick={() => navigate(`/recipes/${recipe.id}/edit`)}
-              ></img>
-              <img
-                className="action__button"
-                src="../trashcan.png"
+              ><FaRegEdit /></i>
+              <i
+                className="trash__icon"
                 onClick={() => {
                   handleDeleteRecipe(recipe.id);
                 }}
-              ></img>
+              ><FaTrashAlt/></i>
             </section>
           ) : (
             ""

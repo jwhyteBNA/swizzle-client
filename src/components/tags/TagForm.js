@@ -29,7 +29,7 @@ export const TagForm = ({getAllTags}) => {
       <fieldset>
         <div className="tag">
           <label htmlFor="name">Label: </label>
-          <input type="text" name="label" required className="form-control"
+          <input type="text" name="label" required className="tagform-control"
             placeholder="Enter a new tag label here"
             onChange={handleInputChange}
           />
