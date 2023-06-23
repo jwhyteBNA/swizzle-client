@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { createComment, getCommentsByRecipeId, deleteComment } from "../../managers/CommentManager";
-import "./comment.css"
+import { FaTrashAlt } from "react-icons/fa";
+import "./comment.css";
+
 
 export const CommentList = () => {
     const [comments, setComments] = useState([])
@@ -58,7 +60,7 @@ export const CommentList = () => {
     }
 
     return (
-        <div>
+        <div className="comment_content">
             <form className="comment_form">
                 <h3 htmlFor="content">New Comment: </h3>
                 <textarea
@@ -85,13 +87,13 @@ export const CommentList = () => {
             <h2>Comments</h2>
             <div className="comment_container">
             {comments.map((comment) => (
-                <div key={comment.id}>
-                    <img src={comment?.image_url}/>
-                    <p>{comment.content}</p>
+                <div className="comment-details" key={comment.id}>
+                    <img className="comment-img"src={comment?.image_url}/>
+                    <p className="comment-content">{comment.content}</p>
                     <h4>{comment.mixologist.user.username}</h4>
                     <h4>{comment.created_on}</h4>
                     {comment.can_edit ? 
-                    <img className="action__button" src="/trashcan.png" onClick={() => handleDeleteComment(comment.id)}></img> 
+                    <i className="trash__icon"onClick={() => handleDeleteComment(comment.id)}><FaTrashAlt/></i> 
                     :
                     ""
                     }

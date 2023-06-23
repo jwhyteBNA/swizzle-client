@@ -44,8 +44,6 @@ export const CategoryForm = ({getAllCategories}) => {
         <div className="category">
           <label htmlFor="name">Description: </label>
           <textarea name="label" required className="catform-control"
-          rows="2"
-          cols="auto"
             placeholder="Explain the category"
             onChange={handleInputChange}
           />

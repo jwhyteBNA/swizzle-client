@@ -7,6 +7,7 @@ import {
   getRecipes,
   markRecipeAsFave,
 } from "../../managers/RecipeManager";
+import { FaStar, FaRegStar, FaTrashAlt, FaRegEdit } from "react-icons/fa";
 
 export const RecipeList = () => {
   const [recipes, setRecipes] = useState([]);
@@ -80,10 +81,27 @@ export const RecipeList = () => {
                 >
                   {recipe.name}
                 </h2>
-                <div className="recipe__publication_date">
-                  {" "}
-                  {recipe.publication_date}
-                </div>
+                <div className="recipe_favorite">
+                {recipe.is_favorite ? (
+                  <i
+                    className="unfave_icon"
+                    onClick={(e) => {
+                      deleteFavoriteRecipe(e, recipe.id);
+                    }}
+                  >
+                    <FaStar />
+                  </i>
+                ) : (
+                  <i
+                    className="fave_icon"
+                    onClick={(e) => {
+                      favoriteThisRecipe(e, recipe.id);
+                    }}
+                  >
+                    <FaRegStar />
+                  </i>
+                )}
+              </div>
               </section>
               <img
                 className="recipe__image"
@@ -95,47 +113,26 @@ export const RecipeList = () => {
                   className="recipe__author"
                   onClick={() => navigate(`/users/${recipe.user.user.id}`)}
                 >
-                  Mixologist: <b>{recipe.mixologist.user.username}</b>
+                  <b>{recipe.mixologist.user.username}</b>
                 </div>
-                <section className="reaction__buttons"></section>
+                <div className="recipe__publication_date">
+                  {recipe.publication_date}
+                </div>
               </section>
-              <div className="recipe_favorite">
-                {recipe.is_favorite ? (
-                  <button
-                    className="btn-3"
-                    onClick={(e) => {
-                      deleteFavoriteRecipe(e, recipe.id);
-                    }}
-                  >
-                    Unfavorite
-                  </button>
-                ) : (
-                  <button
-                    className="btn-2"
-                    onClick={(e) => {
-                      favoriteThisRecipe(e, recipe.id);
-                    }}
-                  >
-                    Favorite
-                  </button>
-                )}
-              </div>
 
               {recipe.can_edit ? (
                 <>
                   <section className="action__buttons_container">
-                    <img
-                      className="action__button"
-                      src="gear.png"
+                    <i
+                      className="edit__icon"
                       onClick={() => navigate(`/recipes/${recipe.id}/edit`)}
-                    ></img>
-                    <img
-                      className="action__button"
-                      src="trashcan.png"
+                    ><FaRegEdit /></i>
+                    <i
+                      className="trash__icon"
                       onClick={() => {
                         handleDeleteRecipe(recipe.id);
                       }}
-                    ></img>
+                    ><FaTrashAlt/></i>
                   </section>
                 </>
               ) : (

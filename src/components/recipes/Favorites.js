@@ -4,6 +4,7 @@ import {
   getMyFavorites,
   deleteRecipeAsFave,
 } from "../../managers/RecipeManager";
+import { FaStar, FaRegStar, FaTrashAlt, FaRegEdit } from "react-icons/fa";
 
 export const MyFavorites = () => {
   const [recipes, setRecipes] = useState([]);
@@ -47,11 +48,17 @@ export const MyFavorites = () => {
                 >
                   {recipe.name}
                 </h3>
-                <div className="recipe__publication_date">
-                  {" "}
-                  {recipe.publication_date}
+                <div className="recipe_favorite">
+                  <i
+                    className="unfave_icon"
+                    onClick={(e) => {
+                      deleteFavoriteRecipe(e, recipe.id);
+                    }}
+                  >
+                    <FaStar />
+                  </i>
                 </div>
-              </section>
+                </section>
               <img
                 className="recipe__image"
                 src={recipe.image_url}
@@ -64,17 +71,10 @@ export const MyFavorites = () => {
                     navigate(`/users/${recipe.mixologist.user.id}`)
                   }
                 >
-                  Mixologist: <b>{recipe.mixologist.user.username}</b>
+                  <b>{recipe.mixologist.user.username}</b>
                 </div>
-                <div className="recipe_favorite">
-                  <button
-                    className="btn-3"
-                    onClick={(e) => {
-                      deleteFavoriteRecipe(e, recipe.id);
-                    }}
-                  >
-                    Unfavorite
-                  </button>
+                <div className="recipe__publication_date">
+                  {recipe.publication_date}
                 </div>
               </section>
             </section>
