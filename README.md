@@ -1,5 +1,7 @@
 # Swizzle & Salud: Your Mocktail Mixology Mainstay
 
+![Swizzle Logo](./src/images/ss_neon.gif)
+
 *The recipe hub for the social enthusiast who loves their tonic... hold the gin.*
 
 ### Application Overview
